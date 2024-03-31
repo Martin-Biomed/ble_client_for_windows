@@ -88,16 +88,16 @@ async def send_ble_data(ble_device_address: str, command: str, gatt_read_uuid: s
         return error_str
 
 
-async def main(device_name: str, device_addr: str, command: str, gatt_read_uuid: str, gatt_write_uuid: str):
+async def main(device_name: str, device_addr: str, command: str, gatt_read_uuid: str, gatt_write_uuid: str) -> str:
 
     # We find a matching MAC for the provided device name, or we verify if the provided address can be found
     ble_device_addr = await find_ble_device(device_name, device_addr)
 
     print("Preparing to send BLE data")
     result_str = await send_ble_data(ble_device_addr, command, gatt_read_uuid, gatt_write_uuid)
-    print("The result from the (send_ble_data) function is: \n")
-    print(result_str)
-
+    #print("The result from the (send_ble_data) function is: \n")
+    #print(result_str)
+    return result_str
 
 #if __name__ == "__main__":
     # args = ["wifi_scan"]
