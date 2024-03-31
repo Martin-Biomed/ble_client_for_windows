@@ -1,5 +1,5 @@
 from unittest import TestCase
-from ble_request_handler_standalone import send_ble_data, find_ble_device
+from debugging_utilities.ble_request_handler_standalone import send_ble_data, find_ble_device
 import asyncio
 from bleak import BleakScanner
 

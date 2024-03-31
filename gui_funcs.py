@@ -1,5 +1,6 @@
 from PyQt5 import QtWidgets
 from ble_request_handler import main
+from result_str_class import Result_String
 import asyncio
 import re
 
@@ -19,7 +20,6 @@ ble_gatt_read_uuid = "ble_gatt_read_uuid"
 ble_msg_str = "ble_msg_str"
 
 field_names = [ble_device_name, ble_device_addr, ble_gatt_write_uuid, ble_gatt_read_uuid, ble_msg_str]
-
 
 def help_button_clicked():
 	print("Help Button clicked")
@@ -101,7 +101,7 @@ def check_if_valid_field_value(usr_field_name: str, qt_text_str: str) -> int:
 
 
 # The OK button on the main GUI screen takes the text inputs from and prepares to send/receive GATT msg and reply
-def main_screen_ok_button_clicked():
+def main_screen_ok_button_clicked(input_obj: Result_String):
 	print("Main GUI Page OK Button Clicked")
 	print("The fields have been updated with the following values: ")
 	device_known = 0  # To send a msg, either the MAC address or the Device Name must be provided
@@ -114,16 +114,17 @@ def main_screen_ok_button_clicked():
 			if key == ble_device_addr and len(value) > 0:
 				device_known = 1
 
+	result_str = ""
+
 	if device_known == 1:
 		print("Valid message ready to send")
-		asyncio.run(main(ble_msg_fields_dict[ble_device_name], ble_msg_fields_dict[ble_device_addr],
+		result_str = asyncio.run(main(ble_msg_fields_dict[ble_device_name], ble_msg_fields_dict[ble_device_addr],
 						 ble_msg_fields_dict[ble_msg_str], ble_msg_fields_dict[ble_gatt_read_uuid],
 						 ble_msg_fields_dict[ble_gatt_write_uuid]))
 	else:
 		print("Either the BLE Server MAC address or Device Name must be provided")
 
-
-# asyncio.run(main(user_cmd))
+	input_obj.set_result_str(result_str)
 
 
 # This function updates a ble_msg_fields_dict entry based on the value of a single QtWidgets.QTextEdit obj
