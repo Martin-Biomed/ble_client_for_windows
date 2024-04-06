@@ -8,6 +8,11 @@ The following process was used to generate the list of required Python dependenc
 1. In the base project dir, install the package using: **pip install pipreqs**
 2. To generate a Python dependencies list, enter cmd: **pipreqs . --ignore ".venv"**
    1. This command generates a "requirements.txt" file with the required dependencies.
+
 3. Install the list of dependencies using: **pip install -r requirements.txt**
+
+**Note:** To use pipreqs, it was necessary to manually download a Python library called pysetupdi.
+This API wrapper is used by the "pipreqs" tool to some extent, but it was not available from
+pip at the time of this project.
 
 If using PyCharm, these dependencies are only installed within the scope of the (venv).

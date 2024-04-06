@@ -1,5 +1,6 @@
 
-# We use a Get/Set approach for the result str due to how the Python namespaces between the GUI and func files are set up
+# We use a GET/SET approach for the result str due to how the Python namespaces between the GUI and func files are set up
+# To use the GET/SET approach for the result string, it was necessary to create an additional object.
 class Result_String(object):
 
 	def __init__(self):

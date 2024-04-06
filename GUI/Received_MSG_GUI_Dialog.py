@@ -10,25 +10,32 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+# See the following for further guidance: https://www.pythonguis.com/tutorials/qscrollarea/
 
-class Ui_results_window(object):
+class Ui_results_dialog(object):
     def setupUi(self, results_window):
         results_window.setObjectName("results_window")
-        results_window.resize(400, 456)
+        # We manually assign a fixed size for the main GUI Dialog Box
+        results_window.setFixedSize(400, 460)
+        # We manually need to enable the "minimize" button for the dialog box
+        results_window.setWindowFlags(results_window.windowFlags() | QtCore.Qt.WindowMinimizeButtonHint)
         self.buttonBox = QtWidgets.QDialogButtonBox(results_window)
         self.buttonBox.setGeometry(QtCore.QRect(300, 390, 81, 241))
         self.buttonBox.setOrientation(QtCore.Qt.Vertical)
         self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
         self.buttonBox.setObjectName("buttonBox")
+
         self.results_description_label = QtWidgets.QLabel(results_window)
         self.results_description_label.setGeometry(QtCore.QRect(30, 20, 271, 16))
         self.results_description_label.setStyleSheet("font: 9pt \"Arial\";")
         self.results_description_label.setObjectName("results_description_label")
+
         self.publish_options_label = QtWidgets.QLabel(results_window)
         self.publish_options_label.setGeometry(QtCore.QRect(30, 390, 251, 41))
         self.publish_options_label.setStyleSheet("font: 9pt \"Arial\";\n""font: 8pt \"MS Shell Dlg 2\";")
         self.publish_options_label.setWordWrap(True)
         self.publish_options_label.setObjectName("publish_options_label")
+
         self.scrollArea = QtWidgets.QScrollArea(results_window)
         self.scrollArea.setGeometry(QtCore.QRect(40, 50, 321, 321))
         self.scrollArea.setWidgetResizable(True)
@@ -43,15 +50,16 @@ class Ui_results_window(object):
         # To expand the scroll area (in case larger replies are expected), edit the QtCore.QSize
         self.reply_msg_scrollArea.setMinimumSize(QtCore.QSize(0, 1500))
         self.reply_msg_scrollArea.setObjectName("reply_msg_scrollArea")
+
         self.reply_msg_label = QtWidgets.QLabel(self.reply_msg_scrollArea)
-        # To expand the scroll area (in case larger replies are expected), edit the QtCore.QSize
-        self.reply_msg_label.setGeometry(QtCore.QRect(0, 0, 321, 1500))
+        self.reply_msg_label.setGeometry(QtCore.QRect(0, 0, 321, 1000))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.reply_msg_label.sizePolicy().hasHeightForWidth())
         self.reply_msg_label.setSizePolicy(sizePolicy)
-        self.reply_msg_label.setMinimumSize(QtCore.QSize(0, 1000))
+        # To expand the scroll area (in case larger replies are expected), edit the QtCore.QSize
+        self.reply_msg_label.setMinimumSize(QtCore.QSize(0, 1500))
         self.reply_msg_label.setStyleSheet("font: 8pt \"Arial\";\n""background-color: rgb(255, 255, 255);")
         self.reply_msg_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.reply_msg_label.setWordWrap(True)
@@ -75,7 +83,8 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     results_window = QtWidgets.QDialog()
-    ui = Ui_results_window()
+    #results_window.setWindowModality(QtCore.Qt.ApplicationModal)
+    ui = Ui_results_dialog()
     ui.setupUi(results_window)
     results_window.show()
     sys.exit(app.exec_())
