@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25a7bdd1-421d-4159-b060-91143bb2b8bb" name="Changes" comment="ble client app: ble server response screen integration&#10;&#10;A GUI page has been added and integrated with the main GUI setup page. This new page shows the reply from the BLE server in a scrollable Qt5 QLabel.">
-      <change afterPath="$PROJECT_DIR$/BLE_Client_Utility_Init_Dialog.py" afterDir="false" />
+    <list default="true" id="25a7bdd1-421d-4159-b060-91143bb2b8bb" name="Changes" comment="ble client app: Init Dialog Box Created + Refactor&#10;&#10;A GUI page has been added and integrated that provides access to the BLE Dialog Box that configures a BLE message using the GUI.&#10;&#10;To be integrated with the API server in the future.">
+      <change afterPath="$PROJECT_DIR$/access_api_definitions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/field_format_funcs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLE_Client_Main_GUI_Screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/BLE_Client_Main_GUI_Dialog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Received_MSG_GUI_Screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Received_MSG_GUI_Dialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BLE_Client_Main_GUI_Dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/BLE_Client_Main_GUI_Dialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BLE_Client_Utility_Init_Dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/BLE_Client_Init_Dialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Received_MSG_GUI_Dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Received_MSG_GUI_Dialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/gui_funcs.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/gui_funcs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ble_request_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/ble_request_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui_README.md" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/gui_README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui_funcs.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/gui_funcs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_README.md" beforeDir="false" afterPath="$PROJECT_DIR$/project_README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result_str_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/result_str_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_ble_send.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_ble_send.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,38 +42,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests in test_ble_send.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.BLE_Client_Main_GUI_Dialog.executor&quot;: &quot;Run&quot;,
-    &quot;Python.BLE_Client_Main_GUI_Screen.executor&quot;: &quot;Run&quot;,
-    &quot;Python.BLE_Client_Utility_Init_Dialog.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Received_MSG_GUI_Dialog.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Received_MSG_GUI_Screen.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ble_service_scanner.executor&quot;: &quot;Run&quot;,
-    &quot;Python.client.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gui_funcs.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.manual_cmds.executor&quot;: &quot;Run&quot;,
-    &quot;Python.project_gui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.send_wifi_scan.executor&quot;: &quot;Run&quot;,
-    &quot;Python.wifi_scan.executor&quot;: &quot;Run&quot;,
-    &quot;Python.wifi_scan_testbench.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/marti/Documents/git_repos/ble_client&quot;,
-    &quot;settings.build.tools.auto.reload&quot;: &quot;ALL&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests in test_ble_send.py.executor": "Run",
+    "Python.BLE_Client_Init_Dialog.executor": "Run",
+    "Python.BLE_Client_Main_GUI_Dialog.executor": "Run",
+    "Python.BLE_Client_Main_GUI_Screen.executor": "Run",
+    "Python.BLE_Client_Utility_Init_Dialog.executor": "Run",
+    "Python.Received_MSG_GUI_Dialog.executor": "Run",
+    "Python.Received_MSG_GUI_Screen.executor": "Run",
+    "Python.access_api_definitions.executor": "Run",
+    "Python.ble_service_scanner.executor": "Run",
+    "Python.client.executor": "Run",
+    "Python.gui_funcs.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.manual_cmds.executor": "Run",
+    "Python.project_gui.executor": "Run",
+    "Python.send_wifi_scan.executor": "Run",
+    "Python.wifi_scan.executor": "Run",
+    "Python.wifi_scan_testbench.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/marti/Documents/git_repos/ble_client",
+    "settings.build.tools.auto.reload": "ALL",
+    "settings.editor.selected.configurable": "advanced.settings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\marti\Documents\git_repos\ble_client" />
       <recent name="C:\Users\marti\Documents\git_repos\ble_client\pysetupdi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\marti\Documents\git_repos\ble_client" />
       <recent name="C:\Users\marti\Documents\git_repos\ble_client\GUI" />
+      <recent name="C:\Users\marti\Documents\git_repos\ble_client" />
       <recent name="C:\Users\marti\Documents\git_repos\ble_client\debugging_utilities" />
       <recent name="C:\Users\marti\Documents\git_repos\ble_client\utilities" />
     </key>
@@ -119,7 +120,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711891273913</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ble client app: Init Dialog Box Created + Refactor&#10;&#10;A GUI page has been added and integrated that provides access to the BLE Dialog Box that configures a BLE message using the GUI.&#10;&#10;To be integrated with the API server in the future.">
+      <option name="closed" value="true" />
+      <created>1712386903407</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712386903407</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +146,7 @@
     <MESSAGE value="ble client app:&#10;&#10;This application has now been developed such that running the (send_wifi_scan.py) script in the PyCharm terminal can succesfully send and receive messages over BLE GATT.&#10;&#10;It has been shown to work consistently with the custom (example-packet-sniffer) app developed locally." />
     <MESSAGE value="ble client app: initial gui integration&#10;&#10;A GUI page has been made and integrated with the ble request handler such that we can trigger a generic BLE message from GUI text inputs." />
     <MESSAGE value="ble client app: ble server response screen integration&#10;&#10;A GUI page has been added and integrated with the main GUI setup page. This new page shows the reply from the BLE server in a scrollable Qt5 QLabel." />
-    <option name="LAST_COMMIT_MESSAGE" value="ble client app: ble server response screen integration&#10;&#10;A GUI page has been added and integrated with the main GUI setup page. This new page shows the reply from the BLE server in a scrollable Qt5 QLabel." />
+    <MESSAGE value="ble client app: Init Dialog Box Created + Refactor&#10;&#10;A GUI page has been added and integrated that provides access to the BLE Dialog Box that configures a BLE message using the GUI.&#10;&#10;To be integrated with the API server in the future." />
+    <option name="LAST_COMMIT_MESSAGE" value="ble client app: Init Dialog Box Created + Refactor&#10;&#10;A GUI page has been added and integrated that provides access to the BLE Dialog Box that configures a BLE message using the GUI.&#10;&#10;To be integrated with the API server in the future." />
   </component>
 </project>

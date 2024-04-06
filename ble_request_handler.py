@@ -20,6 +20,7 @@ async def find_ble_device(device_name: str, device_addr: str) -> str:
         print(d.address)
         print(d.name)
 
+        # The user can provide a Device Name or MAC Address (both of which are acceptable options)
         if d.name == device_name:
             return d.address
 
