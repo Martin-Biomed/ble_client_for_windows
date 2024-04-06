@@ -75,7 +75,7 @@ class Ui_results_dialog(object):
         _translate = QtCore.QCoreApplication.translate
         results_window.setWindowTitle(_translate("results_window", "Dialog"))
         self.results_description_label.setText(_translate("results_window", "Message received from selected BLE Server is:"))
-        self.publish_options_label.setText(_translate("results_window", "Would you like to make this data available over the BLE client app server (http://127.0.0.1:8000)?"))
+        self.publish_options_label.setText(_translate("results_window", "Would you like to make this data available over the BLE client app server (http://127.0.0.1:590)?"))
         self.reply_msg_label.setText(_translate("results_window", "Received Message from BLE Server to be displayed here"))
 
 

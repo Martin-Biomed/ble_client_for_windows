@@ -9,7 +9,7 @@ from PyQt5 import QtCore, QtWidgets
 from GUI.gui_funcs import help_button_clicked, main_screen_ok_button_clicked, update_qt_text_str
 from GUI.Received_MSG_GUI_Dialog import Ui_results_dialog
 from result_str_class import Result_String
-import BLE_Client_Utility_Init_Dialog
+import BLE_Client_Init_Dialog
 
 
 # We declare a custom MyDialog class so we can overload a few selected methods from the default QtWidgets.QDialog class
@@ -44,7 +44,7 @@ class Ui_BLE_GATT_Client(object):
 
     def open_init_dialog(self, BLE_GATT_Client):
         print("The open_init_dialog function was called.")
-        self.ui = BLE_Client_Utility_Init_Dialog.Ui_Dialog()
+        self.ui = BLE_Client_Init_Dialog.Ui_Dialog()
         self.ui.setupUi(self.init_dialog)
         BLE_GATT_Client.hide()
         self.init_dialog.open()
