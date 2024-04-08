@@ -3,9 +3,14 @@ from ble_request_handler import main, generic_exception_handler
 import asyncio
 
 from field_format_funcs import (ble_msg_fields_dict, field_names, check_if_valid_field_value, ble_device_name,
-								ble_device_addr, ble_msg_str, ble_gatt_read_uuid, ble_gatt_write_uuid)
+								ble_device_addr, ble_msg_str, ble_gatt_read_uuid, ble_gatt_write_uuid,
+								ble_msg_result_str_dict, ble_msg_result_str)
 
 api = Flask("BLE Client Access API")
+
+# API Server Constants
+server_ip = '127.0.0.1'
+server_port = 5900
 
 # Initialize all dictionary terms as empty strings
 ble_msg_fields_dict[ble_device_addr] = ''
@@ -14,6 +19,7 @@ ble_msg_fields_dict[ble_gatt_read_uuid] = ''
 ble_msg_fields_dict[ble_gatt_write_uuid] = ''
 ble_msg_fields_dict[ble_msg_str] = ''
 
+ble_msg_result_str_dict[ble_msg_result_str] = ''
 
 # This function is accessible using a PUT request to endpoint: http://127.0.0.1:5900/device/name/<name>
 # Note: If the device name contains spaces, URL encoding normally encodes spaces with either a (+) or %20
@@ -29,8 +35,8 @@ def update_ble_device_name(name):
 			print("Received string exceeds char limit")
 			return 'Received string exceeds char limit', 400
 	else:
-		print("Received data is not a string")
-		return 'Received data is not a string', 417
+		print("Received data is not a UTF-8 string")
+		return 'Received data is not a UTF-8 string', 417
 
 
 # This function is accessible using a PUT request to endpoint: http://127.0.0.1:5900/device/address/<address>
@@ -46,8 +52,8 @@ def update_ble_device_address(address):
 			print("MAC address did not match format: xx:xx:xx:xx:xx:xx (Note: F is highest Hex value allowed)")
 			return 'MAC address did not match format: xx:xx:xx:xx:xx:xx (Note: F is highest Hex value allowed)', 400
 	else:
-		print("Received data is not a string")
-		return 'Received data is not a string', 417
+		print("Received data is not a UTF-8 string")
+		return 'Received data is not a UTF-8 string', 417
 
 
 # This function is accessible using a PUT request to endpoint: http://127.0.0.1:5900/gatt/write/<uuid>
@@ -63,8 +69,8 @@ def update_gatt_write_uuid(uuid):
 			print("Received string is not in correct format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)")
 			return 'Received string is not in correct format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)', 400
 	else:
-		print("Received data is not a string")
-		return 'Received data is not a string', 417
+		print("Received data is not a UTF-8 string")
+		return 'Received data is not a UTF-8 string', 417
 
 
 # This function is accessible using a PUT request to endpoint: http://127.0.0.1:5900/gatt/read/<uuid>
@@ -126,6 +132,8 @@ def send_msg():
 			result_str = asyncio.run(main(ble_msg_fields_dict[ble_device_name], ble_msg_fields_dict[ble_device_addr],
 										  ble_msg_fields_dict[ble_msg_str], ble_msg_fields_dict[ble_gatt_read_uuid],
 										  ble_msg_fields_dict[ble_gatt_write_uuid]))
+
+			ble_msg_result_str_dict[ble_msg_result_str] = result_str
 			return result_str, 200
 
 		except Exception as e:
@@ -136,4 +144,23 @@ def send_msg():
 		return 'One (or more) data fields are missing or wrongly formatted', 400
 
 
-api.run(host='127.0.0.1', port=5900, debug=True)
+# This function returns all fields to their blank state: http://127.0.0.1:5900/clear_fields
+@api.route('/clear_fields', methods=['POST'])
+def clear_fields():
+	ble_msg_fields_dict[ble_device_name] = ""
+	ble_msg_fields_dict[ble_device_addr] = ""
+	ble_msg_fields_dict[ble_gatt_read_uuid] = ""
+	ble_msg_fields_dict[ble_gatt_write_uuid] = ""
+	ble_msg_fields_dict[ble_msg_str] = ""
+
+	return 'All fields values are blank', 200
+
+
+# This function returns all fields to their blank state: http://127.0.0.1:5900/clear_fields
+@api.route('/result_str', methods=['GET'])
+def return_result_str():
+	return ble_msg_result_str_dict[ble_msg_result_str], 200
+
+
+
+#api.run(host='127.0.0.1', port=5900, debug=True)
