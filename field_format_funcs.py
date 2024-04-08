@@ -20,6 +20,10 @@ ble_msg_str = "ble_msg_str"
 
 field_names = [ble_device_name, ble_device_addr, ble_gatt_write_uuid, ble_gatt_read_uuid, ble_msg_str]
 
+# We create a dictionary with a single term in it so that the result_str is available in multiple files
+ble_msg_result_str_dict = {}
+ble_msg_result_str = "ble_msg_result_str"
+
 ################################ Functions ########################################
 
 # There is a specific set of criteria for each field value to determine if the value is valid
@@ -55,7 +59,7 @@ def check_if_valid_field_value(usr_field_name: str, qt_text_str: str) -> int:
 	# Check the BLE GATT Write Characteristic UUID is valid
 	elif usr_field_name == ble_gatt_write_uuid:
 		if max_uuid_str_len >= len(qt_text_str) > 0:
-			# [\x00-\x7F]{4} = (x4) ASCII characters
+			# [\x00-\x7F]{4} = (x4) ASCII characters. Only ASCII characters are acceptable for UUID.
 			if re.match("[\x00-\x7F]{8}-[\x00-\x7F]{4}-[\x00-\x7F]{4}-[\x00-\x7F]{4}-[\x00-\x7F]{12}", qt_text_str):
 				return 0
 			else:
@@ -73,7 +77,7 @@ def check_if_valid_field_value(usr_field_name: str, qt_text_str: str) -> int:
 	# Check the BLE GATT Read Characteristic UUID is valid
 	elif usr_field_name == ble_gatt_read_uuid:
 		if max_uuid_str_len >= len(qt_text_str) > 0:
-			# [\x00-\x7F]{4} = (x4) ASCII characters
+			# [\x00-\x7F]{4} = (x4) ASCII characters. Only ASCII characters are acceptable for UUID.
 			if re.match("[\x00-\x7F]{8}-[\x00-\x7F]{4}-[\x00-\x7F]{4}-[\x00-\x7F]{4}-[\x00-\x7F]{12}", qt_text_str):
 				return 0
 			else:

@@ -1,3 +1,5 @@
+import os
+import time
 from unittest import TestCase
 from ble_request_handler import send_ble_data, find_ble_device
 import asyncio
@@ -36,6 +38,11 @@ class TestSendingDataOverGatt(TestCase):
     known_ble_device_addr = ""
     ble_device_addr = asyncio.run(find_ble_device(ble_device_name, known_ble_device_addr))
     wrong_device_addr = asyncio.run(find_random_bluetooth_device(ble_device_name))
+
+    def setUp(self):
+        """ Setup before each Test """
+        # This wait time is necessary so that the ESP32 has time to return to GATT advertisement consistently
+        time.sleep(1)
 
     def test_successful_wifi_scan(self):
         """ Test 1: Normal Wi-Fi Scan over the BLE GATT Client """

@@ -98,6 +98,7 @@ async def main(device_name: str, device_addr: str, command: str, gatt_read_uuid:
     result_str = await send_ble_data(ble_device_addr, command, gatt_read_uuid, gatt_write_uuid)
     return result_str
 
+
 #if __name__ == "__main__":
     # args = ["wifi_scan"]
     # asyncio.run(main(*args))
