@@ -162,5 +162,5 @@ def return_result_str():
 	return ble_msg_result_str_dict[ble_msg_result_str], 200
 
 
-
-#api.run(host='127.0.0.1', port=5900, debug=True)
+if __name__ == '__main__':
+	api.run(host=server_ip, port=server_port, debug=True)

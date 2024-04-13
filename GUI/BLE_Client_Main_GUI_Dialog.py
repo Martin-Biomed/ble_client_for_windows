@@ -126,7 +126,7 @@ class Ui_BLE_GATT_Client(object):
         # Calls the label functions and text
         self.retranslateUi(BLE_GATT_Client)
 
-        # Note: When passing an argument to one of these functions, it starts expecting the function to be callable.
+        # Note: When passing an argument to one of these functions, The Qt5 Object expects the function to be callable.
         # A function is callable when we pass an object as an input arg, or we pass no input arguments at all.
         # In our case, we need to invoke the non-callable function anonymously (using lambda) to avoid errors.
         self.default_buttonBox.accepted.connect(lambda: update_qt_text_str("ble_device_name", self.BLE_Device_Name.toPlainText()))

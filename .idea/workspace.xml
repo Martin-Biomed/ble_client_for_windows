@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25a7bdd1-421d-4159-b060-91143bb2b8bb" name="Changes" comment="ble client app: API Created (Tests Not Made Yet)&#10;&#10;An API has been created that allows us to configure a message to send over BLE GATT. The API is exposed on (http://127.0.0.1:5900).&#10;&#10;Further Refactoring was also done on GUI functions to make the code more re-usable outside of the GUI.">
-      <change afterPath="$PROJECT_DIR$/tests/test_api_funcs.py" afterDir="false" />
+    <list default="true" id="25a7bdd1-421d-4159-b060-91143bb2b8bb" name="Changes" comment="ble client app: API Tests Created&#10;&#10;A test suite (test_api_funcs.py) has been created for the API functions.&#10;&#10;This commit also includes some minor refactoring across multiple files to help made the code more readable and accessible.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/access_api_definitions.py" beforeDir="false" afterPath="$PROJECT_DIR$/access_api_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ble_request_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/ble_request_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/BLE_Client_Init_Dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/BLE_Client_Init_Dialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/BLE_Client_Main_GUI_Dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/BLE_Client_Main_GUI_Dialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/access_api_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/access_api_functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/field_format_funcs.py" beforeDir="false" afterPath="$PROJECT_DIR$/field_format_funcs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_ble_send.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_ble_send.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +43,7 @@
   &quot;keyToString&quot;: {
     &quot;Python tests.Python tests in test_api_funcs.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests in test_ble_send.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.API_Viewer_Dialog.executor&quot;: &quot;Run&quot;,
     &quot;Python.BLE_Client_Init_Dialog.executor&quot;: &quot;Run&quot;,
     &quot;Python.BLE_Client_Main_GUI_Dialog.executor&quot;: &quot;Run&quot;,
     &quot;Python.BLE_Client_Main_GUI_Screen.executor&quot;: &quot;Run&quot;,
@@ -135,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712407172313</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ble client app: API Tests Created&#10;&#10;A test suite (test_api_funcs.py) has been created for the API functions.&#10;&#10;This commit also includes some minor refactoring across multiple files to help made the code more readable and accessible.">
+      <option name="closed" value="true" />
+      <created>1712573215040</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712573215040</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,6 +164,7 @@
     <MESSAGE value="ble client app: ble server response screen integration&#10;&#10;A GUI page has been added and integrated with the main GUI setup page. This new page shows the reply from the BLE server in a scrollable Qt5 QLabel." />
     <MESSAGE value="ble client app: Init Dialog Box Created + Refactor&#10;&#10;A GUI page has been added and integrated that provides access to the BLE Dialog Box that configures a BLE message using the GUI.&#10;&#10;To be integrated with the API server in the future." />
     <MESSAGE value="ble client app: API Created (Tests Not Made Yet)&#10;&#10;An API has been created that allows us to configure a message to send over BLE GATT. The API is exposed on (http://127.0.0.1:5900).&#10;&#10;Further Refactoring was also done on GUI functions to make the code more re-usable outside of the GUI." />
-    <option name="LAST_COMMIT_MESSAGE" value="ble client app: API Created (Tests Not Made Yet)&#10;&#10;An API has been created that allows us to configure a message to send over BLE GATT. The API is exposed on (http://127.0.0.1:5900).&#10;&#10;Further Refactoring was also done on GUI functions to make the code more re-usable outside of the GUI." />
+    <MESSAGE value="ble client app: API Tests Created&#10;&#10;A test suite (test_api_funcs.py) has been created for the API functions.&#10;&#10;This commit also includes some minor refactoring across multiple files to help made the code more readable and accessible." />
+    <option name="LAST_COMMIT_MESSAGE" value="ble client app: API Tests Created&#10;&#10;A test suite (test_api_funcs.py) has been created for the API functions.&#10;&#10;This commit also includes some minor refactoring across multiple files to help made the code more readable and accessible." />
   </component>
 </project>
