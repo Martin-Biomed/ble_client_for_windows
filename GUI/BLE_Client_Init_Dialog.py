@@ -10,13 +10,14 @@
 
 from PyQt5 import QtCore, QtWidgets
 from GUI import BLE_Client_Main_GUI_Dialog
-
+from GUI import API_Viewer_Dialog
 
 class Ui_Dialog(object):
 
     def __init__(self):
-        # We use the custom Dialog class that was created for this project (closes all windows on closeEvent)
+        # We use the custom Dialog classes that were created for this project
         self.ble_msg_config_dialog = BLE_Client_Main_GUI_Dialog.MyDialog()
+        self.api_viewer_dialog = API_Viewer_Dialog.MyDialog()
 
     def open_ble_msg_config_dialog(self, Dialog):
         print("The open_ble_msg_config_dialog function was called.")
@@ -25,6 +26,14 @@ class Ui_Dialog(object):
         # The original Dialog box is replaced by the new Dialog Box
         Dialog.close()
         self.ble_msg_config_dialog.show()
+
+    def open_api_viewer_dialog(self, Dialog):
+        print("The open_api_viewer_dialog function was called.")
+        self.ui = API_Viewer_Dialog.Ui_API_Viewer_Dialog()
+        self.ui.setupUi(self.api_viewer_dialog)
+        # The original Dialog box is replaced by the new Dialog Box
+        Dialog.close()
+        self.api_viewer_dialog.show()
 
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
@@ -45,10 +54,10 @@ class Ui_Dialog(object):
         self.ble_gui_selected_button.setStyleSheet("font: 10pt \"Arial\";")
         self.ble_gui_selected_button.setObjectName("ble_gui_selected_button")
 
-        self.ap_selected_button = QtWidgets.QPushButton(Dialog)
-        self.ap_selected_button.setGeometry(QtCore.QRect(30, 280, 341, 51))
-        self.ap_selected_button.setStyleSheet("font: 10pt \"Arial\";")
-        self.ap_selected_button.setObjectName("ap_selected_button")
+        self.api_selected_button = QtWidgets.QPushButton(Dialog)
+        self.api_selected_button.setGeometry(QtCore.QRect(30, 280, 341, 51))
+        self.api_selected_button.setStyleSheet("font: 10pt \"Arial\";")
+        self.api_selected_button.setObjectName("api_selected_button")
 
         self.Help_Button = QtWidgets.QPushButton(Dialog)
         self.Help_Button.setGeometry(QtCore.QRect(290, 450, 81, 31))
@@ -64,6 +73,7 @@ class Ui_Dialog(object):
         # A function is callable when we pass an object as an input arg, or we pass no input arguments at all.
         # In our case, we need to invoke the non-callable function anonymously (using lambda) to avoid errors.
         self.ble_gui_selected_button.clicked.connect(lambda: self.open_ble_msg_config_dialog(Dialog))  # Custom Function
+        self.api_selected_button.clicked.connect(lambda: self.open_api_viewer_dialog(Dialog))
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -71,9 +81,9 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.App_Name_Label.setText(_translate("Dialog", "Windows BLE Client Utility"))
+        self.App_Name_Label.setText(_translate("Dialog", "Windows BLE GATT Client Utility"))
         self.ble_gui_selected_button.setText(_translate("Dialog", "Configure a BLE GATT Message using this BLE Client"))
-        self.ap_selected_button.setText(_translate("Dialog", "Enable BLE Client Utility API (HTTP Server)"))
+        self.api_selected_button.setText(_translate("Dialog", "Enable BLE Client Utility API (HTTP Server)"))
         self.Help_Button.setText(_translate("Dialog", "Help"))
 
 

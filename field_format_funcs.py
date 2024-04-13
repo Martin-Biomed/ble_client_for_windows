@@ -9,6 +9,8 @@ max_msg_len = 100
 
 ############################ Dictionary ##############################
 
+# We need to access the values in the dictionary from multiple files
+global ble_msg_fields_dict
 ble_msg_fields_dict = {}
 
 # BLE Field names required to send a message to the BLE GATT Client
@@ -21,6 +23,7 @@ ble_msg_str = "ble_msg_str"
 field_names = [ble_device_name, ble_device_addr, ble_gatt_write_uuid, ble_gatt_read_uuid, ble_msg_str]
 
 # We create a dictionary with a single term in it so that the result_str is available in multiple files
+global ble_msg_result_str_dict
 ble_msg_result_str_dict = {}
 ble_msg_result_str = "ble_msg_result_str"
 
