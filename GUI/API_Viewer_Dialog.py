@@ -38,6 +38,7 @@ class FlaskThread(QtCore.QThread):
         # The cancel button will update this value to True to stop the Flask server.
         self.exiting = False
 
+        # We need to start the Application API server in parallel to the GUI
         self.flask_server = access_api_functions.api
 
     def run(self):

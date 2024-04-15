@@ -9,8 +9,8 @@
 
 
 from PyQt5 import QtCore, QtWidgets
-from GUI import BLE_Client_Main_GUI_Dialog
-from GUI import API_Viewer_Dialog
+from GUI import BLE_Client_Main_GUI_Dialog, Help_Init_Dialog, API_Viewer_Dialog
+
 
 class Ui_Dialog(object):
 
@@ -18,6 +18,9 @@ class Ui_Dialog(object):
         # We use the custom Dialog classes that were created for this project
         self.ble_msg_config_dialog = BLE_Client_Main_GUI_Dialog.MyDialog()
         self.api_viewer_dialog = API_Viewer_Dialog.MyDialog()
+
+        # This Dialog class was not edited (inside Help_Init_Dialog.py)
+        self.help_dialog = QtWidgets.QDialog()
 
     def open_ble_msg_config_dialog(self, Dialog):
         print("The open_ble_msg_config_dialog function was called.")
@@ -34,6 +37,14 @@ class Ui_Dialog(object):
         # The original Dialog box is replaced by the new Dialog Box
         Dialog.close()
         self.api_viewer_dialog.show()
+
+    def open_help_dialog(self):
+        print("The open_help_dialog function was called.")
+        # We lock the other Dialog pages while the "Help" Dialog is selected
+        self.help_dialog.setWindowModality(QtCore.Qt.ApplicationModal)
+        self.ui = Help_Init_Dialog.Ui_Help_Dialog()
+        self.ui.setupUi(self.help_dialog)
+        self.help_dialog.show()
 
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
@@ -74,6 +85,7 @@ class Ui_Dialog(object):
         # In our case, we need to invoke the non-callable function anonymously (using lambda) to avoid errors.
         self.ble_gui_selected_button.clicked.connect(lambda: self.open_ble_msg_config_dialog(Dialog))  # Custom Function
         self.api_selected_button.clicked.connect(lambda: self.open_api_viewer_dialog(Dialog))
+        self.Help_Button.clicked.connect(self.open_help_dialog)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)

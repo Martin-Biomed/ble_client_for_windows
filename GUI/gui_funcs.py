@@ -6,9 +6,6 @@ import asyncio
 from field_format_funcs import (ble_msg_fields_dict, field_names, check_if_valid_field_value, ble_device_name,
 								ble_device_addr, ble_msg_str, ble_gatt_read_uuid, ble_gatt_write_uuid)
 
-def help_button_clicked():
-	print("Help Button clicked")
-
 
 # The OK button on the main GUI screen takes the text inputs from and prepares to send/receive GATT msg and reply
 def main_screen_ok_button_clicked(input_obj: Result_String):
