@@ -9,34 +9,52 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from field_format_funcs import ble_msg_result_str_dict, ble_msg_result_str
+from GUI import API_Viewer_Dialog
 
 # See the following for further guidance: https://www.pythonguis.com/tutorials/qscrollarea/
 
 class Ui_results_dialog(object):
-    def setupUi(self, results_window):
-        results_window.setObjectName("results_window")
+
+    # When the user presses the "Cancel" button, reset the value of the message string so its no longer accessible.
+    def reset_reply_str_value(self):
+        # Since this dict is global, the value of the result_str that can be accessed through the API is reset as well
+        ble_msg_result_str_dict[ble_msg_result_str] = ''
+        self.reply_msg_label.setText(ble_msg_result_str_dict[ble_msg_result_str])
+
+    def open_api_viewer_dialog(self, Dialog):
+        print("The open_api_viewer_dialog function was called.")
+        self.api_viewer_dialog = API_Viewer_Dialog.MyDialog()
+        self.ui = API_Viewer_Dialog.Ui_API_Viewer_Dialog()
+        self.ui.setupUi(self.api_viewer_dialog)
+        # The original Dialog box is replaced by the new Dialog Box
+        Dialog.close()
+        self.api_viewer_dialog.show()
+
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
         # We manually assign a fixed size for the main GUI Dialog Box
-        results_window.setFixedSize(400, 460)
+        Dialog.setFixedSize(400, 460)
         # We manually need to enable the "minimize" button for the dialog box
-        results_window.setWindowFlags(results_window.windowFlags() | QtCore.Qt.WindowMinimizeButtonHint)
-        self.buttonBox = QtWidgets.QDialogButtonBox(results_window)
+        Dialog.setWindowFlags(Dialog.windowFlags() | QtCore.Qt.WindowMinimizeButtonHint)
+        self.buttonBox = QtWidgets.QDialogButtonBox(Dialog)
         self.buttonBox.setGeometry(QtCore.QRect(300, 390, 81, 241))
         self.buttonBox.setOrientation(QtCore.Qt.Vertical)
-        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
+        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel | QtWidgets.QDialogButtonBox.Ok)
         self.buttonBox.setObjectName("buttonBox")
 
-        self.results_description_label = QtWidgets.QLabel(results_window)
+        self.results_description_label = QtWidgets.QLabel(Dialog)
         self.results_description_label.setGeometry(QtCore.QRect(30, 20, 271, 16))
         self.results_description_label.setStyleSheet("font: 9pt \"Arial\";")
         self.results_description_label.setObjectName("results_description_label")
 
-        self.publish_options_label = QtWidgets.QLabel(results_window)
+        self.publish_options_label = QtWidgets.QLabel(Dialog)
         self.publish_options_label.setGeometry(QtCore.QRect(30, 390, 251, 41))
         self.publish_options_label.setStyleSheet("font: 9pt \"Arial\";\n""font: 8pt \"MS Shell Dlg 2\";")
         self.publish_options_label.setWordWrap(True)
         self.publish_options_label.setObjectName("publish_options_label")
 
-        self.scrollArea = QtWidgets.QScrollArea(results_window)
+        self.scrollArea = QtWidgets.QScrollArea(Dialog)
         self.scrollArea.setGeometry(QtCore.QRect(40, 50, 321, 321))
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
@@ -66,25 +84,27 @@ class Ui_results_dialog(object):
         self.reply_msg_label.setObjectName("reply_msg_label")
         self.scrollArea.setWidget(self.reply_msg_scrollArea)
 
-        self.retranslateUi(results_window)
-        self.buttonBox.accepted.connect(results_window.accept) # type: ignore
-        self.buttonBox.rejected.connect(results_window.reject) # type: ignore
-        QtCore.QMetaObject.connectSlotsByName(results_window)
+        self.retranslateUi(Dialog)
+        self.buttonBox.accepted.connect(lambda: self.open_api_viewer_dialog(Dialog))
+        self.buttonBox.rejected.connect(lambda: self.reset_reply_str_value())
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-    def retranslateUi(self, results_window):
+    def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        results_window.setWindowTitle(_translate("results_window", "Dialog"))
-        self.results_description_label.setText(_translate("results_window", "Message received from selected BLE Server is:"))
-        self.publish_options_label.setText(_translate("results_window", "Would you like to make this data available over the BLE client app server (http://127.0.0.1:590)?"))
-        self.reply_msg_label.setText(_translate("results_window", "Received Message from BLE Server to be displayed here"))
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.results_description_label.setText(_translate("Dialog", "Message received from selected BLE Server is:"))
+        self.publish_options_label.setText(_translate("Dialog",
+                                                      "Would you like to start the Application API server (http://localhost:5900)? "
+                                                      " Press (Cancel) to reset the value of the message reply string."))
+        self.reply_msg_label.setText(_translate("Dialog", "Received Message from BLE Server to be displayed here"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    results_window = QtWidgets.QDialog()
-    #results_window.setWindowModality(QtCore.Qt.ApplicationModal)
+    Dialog = QtWidgets.QDialog()
+    #Dialog.setWindowModality(QtCore.Qt.ApplicationModal)
     ui = Ui_results_dialog()
-    ui.setupUi(results_window)
-    results_window.show()
+    ui.setupUi(Dialog)
+    Dialog.show()
     sys.exit(app.exec_())
