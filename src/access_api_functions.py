@@ -1,8 +1,9 @@
 from flask import Flask, jsonify, request
-from ble_request_handler import main, generic_exception_handler
 import asyncio
+import logging
 
-from field_format_funcs import (ble_msg_fields_dict, field_names, check_if_valid_field_value, ble_device_name,
+from src.ble_request_handler import main, generic_exception_handler
+from src.field_format_funcs import (ble_msg_fields_dict, field_names, check_if_valid_field_value, ble_device_name,
 								ble_device_addr, ble_msg_str, ble_gatt_read_uuid, ble_gatt_write_uuid,
 								ble_msg_result_str_dict, ble_msg_result_str)
 
@@ -27,15 +28,15 @@ ble_msg_result_str_dict[ble_msg_result_str] = ''
 def update_ble_device_name(name):
 	is_string = isinstance(name, str)
 	if is_string == 1:
-		print("Received: " + name)
+		logging.info("Received Device Name: " + name)
 		if check_if_valid_field_value(ble_device_name, name) == 0:
 			ble_msg_fields_dict[ble_device_name] = name
 			return 'Value Updated', 200
 		else:
-			print("Received string exceeds char limit")
+			logging.error("Received string exceeds char limit")
 			return 'Received string exceeds char limit', 400
 	else:
-		print("Received data is not a UTF-8 string")
+		logging.error("Received data is not a UTF-8 string")
 		return 'Received data is not a UTF-8 string', 417
 
 
@@ -44,15 +45,15 @@ def update_ble_device_name(name):
 def update_ble_device_address(address):
 	is_string = isinstance(address, str)
 	if is_string == 1:
-		print("Received: " + address)
+		logging.info("Received Device Address: " + address)
 		if check_if_valid_field_value(ble_device_addr, address) == 0:
 			ble_msg_fields_dict[ble_device_addr] = address
 			return 'Value Updated', 200
 		else:
-			print("MAC address did not match format: xx:xx:xx:xx:xx:xx (Note: F is highest Hex value allowed)")
+			logging.error("MAC address did not match format: xx:xx:xx:xx:xx:xx (Note: F is highest Hex value allowed)")
 			return 'MAC address did not match format: xx:xx:xx:xx:xx:xx (Note: F is highest Hex value allowed)', 400
 	else:
-		print("Received data is not a UTF-8 string")
+		logging.error("Received data is not a UTF-8 string")
 		return 'Received data is not a UTF-8 string', 417
 
 
@@ -61,15 +62,15 @@ def update_ble_device_address(address):
 def update_gatt_write_uuid(uuid):
 	is_string = isinstance(uuid, str)
 	if is_string == 1:
-		print("Received: " + uuid)
+		logging.info("Received GATT Write UUID: " + uuid)
 		if check_if_valid_field_value(ble_gatt_write_uuid, uuid) == 0:
 			ble_msg_fields_dict[ble_gatt_write_uuid] = uuid
 			return 'Value Updated', 200
 		else:
-			print("Received string is not in correct format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)")
+			logging.error("Received string is not in correct format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)")
 			return 'Received string is not in correct format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)', 400
 	else:
-		print("Received data is not a UTF-8 string")
+		logging.error("Received data is not a UTF-8 string")
 		return 'Received data is not a UTF-8 string', 417
 
 
@@ -78,15 +79,15 @@ def update_gatt_write_uuid(uuid):
 def update_gatt_read_uuid(uuid):
 	is_string = isinstance(uuid, str)
 	if is_string == 1:
-		print("Received: " + uuid)
+		logging.info("Received GATT Read UUID: " + uuid)
 		if check_if_valid_field_value(ble_gatt_read_uuid, uuid) == 0:
 			ble_msg_fields_dict[ble_gatt_read_uuid] = uuid
 			return 'Value Updated', 200
 		else:
-			print("Received string is not in correct format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)")
+			logging.error("Received string is not in correct format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)")
 			return 'Received string is not in correct format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)', 400
 	else:
-		print("Received data is not a string")
+		logging.error("Received data is not a string")
 		return 'Received data is not a string', 417
 
 
@@ -95,15 +96,15 @@ def update_gatt_read_uuid(uuid):
 def update_ble_msg(message):
 	is_string = isinstance(message, str)
 	if is_string == 1:
-		print("Received: " + message)
+		logging.info("The message to send is: " + message)
 		if check_if_valid_field_value(ble_msg_str, message) == 0:
 			ble_msg_fields_dict[ble_msg_str] = message
 			return 'Value Updated', 200
 		else:
-			print("Received string exceeds char limit")
+			logging.error("Received string exceeds char limit")
 			return 'Received string exceeds char limit', 400
 	else:
-		print("Received data is not a string")
+		logging.error("Received data is not a string")
 		return 'Received data is not a string', 417
 
 
@@ -138,7 +139,7 @@ def send_msg():
 
 		except Exception as e:
 			error_str = generic_exception_handler(e)
-			print("Error String: " + error_str)
+			logging.error("Error String: " + error_str)
 			return error_str, 500
 	else:
 		return 'One (or more) data fields are missing or wrongly formatted', 400

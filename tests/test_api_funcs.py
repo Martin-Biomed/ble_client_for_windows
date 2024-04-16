@@ -1,6 +1,6 @@
 from unittest import TestCase
-from access_api_functions import api, server_ip, server_port
-from field_format_funcs import max_msg_len, max_mac_addr_len, max_device_name_len, max_uuid_str_len
+from src.access_api_functions import api, server_ip, server_port
+from src.field_format_funcs import max_msg_len, max_mac_addr_len, max_device_name_len, max_uuid_str_len
 import random
 import string
 

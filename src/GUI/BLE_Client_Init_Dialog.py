@@ -9,40 +9,43 @@
 
 
 from PyQt5 import QtCore, QtWidgets
-from GUI import BLE_Client_Main_GUI_Dialog, Help_Init_Dialog, API_Viewer_Dialog
+import logging
+import src.GUI.BLE_Client_Main_GUI_Dialog
+import src.GUI.Help_Init_Dialog
+import src.GUI.API_Viewer_Dialog
 
 
 class Ui_Dialog(object):
 
     def __init__(self):
         # We use the custom Dialog classes that were created for this project
-        self.ble_msg_config_dialog = BLE_Client_Main_GUI_Dialog.MyDialog()
-        self.api_viewer_dialog = API_Viewer_Dialog.MyDialog()
+        self.ble_msg_config_dialog = src.GUI.BLE_Client_Main_GUI_Dialog.MyDialog()
+        self.api_viewer_dialog = src.GUI.API_Viewer_Dialog.MyDialog()
 
         # This Dialog class was not edited (inside Help_Init_Dialog.py)
         self.help_dialog = QtWidgets.QDialog()
 
     def open_ble_msg_config_dialog(self, Dialog):
-        print("The open_ble_msg_config_dialog function was called.")
-        self.ui = BLE_Client_Main_GUI_Dialog.Ui_BLE_GATT_Client()
+        logging.info("The open_ble_msg_config_dialog function was called.")
+        self.ui = src.GUI.BLE_Client_Main_GUI_Dialog.Ui_BLE_GATT_Client()
         self.ui.setupUi(self.ble_msg_config_dialog)
         # The original Dialog box is replaced by the new Dialog Box
         Dialog.close()
         self.ble_msg_config_dialog.show()
 
     def open_api_viewer_dialog(self, Dialog):
-        print("The open_api_viewer_dialog function was called.")
-        self.ui = API_Viewer_Dialog.Ui_API_Viewer_Dialog()
+        logging.info("The open_api_viewer_dialog function was called.")
+        self.ui = src.GUI.API_Viewer_Dialog.Ui_API_Viewer_Dialog()
         self.ui.setupUi(self.api_viewer_dialog)
         # The original Dialog box is replaced by the new Dialog Box
         Dialog.close()
         self.api_viewer_dialog.show()
 
     def open_help_dialog(self):
-        print("The open_help_dialog function was called.")
+        logging.info("The open_help_dialog function was called.")
         # We lock the other Dialog pages while the "Help" Dialog is selected
         self.help_dialog.setWindowModality(QtCore.Qt.ApplicationModal)
-        self.ui = Help_Init_Dialog.Ui_Help_Dialog()
+        self.ui = src.GUI.Help_Init_Dialog.Ui_Help_Dialog()
         self.ui.setupUi(self.help_dialog)
         self.help_dialog.show()
 

@@ -1,7 +1,6 @@
-import os
 import time
 from unittest import TestCase
-from ble_request_handler import send_ble_data, find_ble_device
+from src.ble_request_handler import send_ble_data, find_ble_device
 import asyncio
 from bleak import BleakScanner
 
@@ -42,7 +41,7 @@ class TestSendingDataOverGatt(TestCase):
     def setUp(self):
         """ Setup before each Test """
         # This wait time is necessary so that the ESP32 has time to return to GATT advertisement consistently
-        time.sleep(1)
+        time.sleep(2)
 
     def test_successful_wifi_scan(self):
         """ Test 1: Normal Wi-Fi Scan over the BLE GATT Client """
