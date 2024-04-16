@@ -1,14 +1,9 @@
 bleak==0.21.1
 contextlib2==21.6.0
+Flask==3.0.3
 importlib_metadata==7.0.2
 ipython==8.12.3
 mock==5.1.0
 pytest==8.1.1
 setuptools==58.1.0
-setuptools==68.2.0
-typing_extensions==4.10.0
-
-PyQt5~=5.15.10
-click~=8.1.7
-python-dotenv~=1.0.1
-flask~=3.0.2
+typing_extensions==4.11.0

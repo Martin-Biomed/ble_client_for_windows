@@ -1,12 +1,13 @@
 import asyncio
 import json
+import logging
 
 from bleak import BleakClient
 from bleak import BleakScanner
 
 
 def generic_exception_handler(e: BaseException) -> str:
-    print(f'Exception caught: {e}')
+    logging.error(f'Exception caught: ' + str(e))
     err_str = str(e)
     return err_str
 
@@ -16,15 +17,15 @@ async def find_ble_device(device_name: str, device_addr: str) -> str:
     devices = await BleakScanner.discover()
     default_addr = device_addr
     for d in devices:
-        print("Device detected: ")
-        print(d.address)
-        print(d.name)
+        logging.info("BLE Device Detected: [Name: " + str(d.name) + "] [Address: " + str(d.address) + "]")
 
         # The user can provide a Device Name or MAC Address (both of which are acceptable options)
         if d.name == device_name:
+            logging.info("Device with Address: " + str(d.address) + " found")
             return d.address
 
         if d.address == device_addr:
+            logging.info("Device with Address: " + str(d.address) + " found")
             return d.address
 
     return default_addr
@@ -42,7 +43,7 @@ async def send_ble_data(ble_device_address: str, command: str, gatt_read_uuid: s
         # Connect to the ESP32 device
         async with BleakClient(ble_device_address, use_cached=False) as client:
 
-            print("Writing to Service with UUID: " + gatt_write_uuid)
+            logging.info("Writing to Service with UUID: " + gatt_write_uuid)
             try:
                 # We send the data over GATT and await the asynchronous response
                 await client.write_gatt_char(gatt_write_uuid, command.encode('utf-8'), response=False)
@@ -51,7 +52,7 @@ async def send_ble_data(ble_device_address: str, command: str, gatt_read_uuid: s
                 access_points_str = "Asyncio Write GATT Operation: Cancelled"
                 try:
                     disconnect_result = await client.disconnect()
-                    print("Disconnect Successful: " + str(disconnect_result))
+                    logging.info("Disconnect Successful: " + str(disconnect_result))
                 except Exception as e:
                     access_points_str += "\n "
                     access_points_str += generic_exception_handler(e)
@@ -59,33 +60,33 @@ async def send_ble_data(ble_device_address: str, command: str, gatt_read_uuid: s
 
             # Receive data from ESP32 via BLE (response from BLE server)
             try:
-                print("Awaiting Response from Service with UUID: " + gatt_read_uuid)
+                logging.info("Awaiting Response from Service with UUID: " + gatt_read_uuid)
                 new_data = await client.read_gatt_char(gatt_read_uuid)
 
             except asyncio.CancelledError:
                 access_points_str = "Asyncio Read GATT Operation: Cancelled"
                 try:
                     disconnect_result = await client.disconnect()
-                    print("Disconnect Successful: " + str(disconnect_result))
+                    logging.info("Disconnect Successful: " + str(disconnect_result))
                 except Exception as e:
                     access_points_str += "\n "
                     access_points_str += generic_exception_handler(e)
                 return access_points_str
 
             # Executes when the user receives a msg from the selected GATT characteristic
-            print("Data from BLE Server: " + str(new_data))
-            print("Length of ByteArray is: " + str(len(new_data)))
+            logging.info("Data from BLE Server: " + str(new_data))
+            logging.info("Length of ByteArray is: " + str(len(new_data)))
             encoding = json.detect_encoding(new_data)
-            print("Data Has been Encoded using: " + encoding)
+            logging.info("Data Has been Encoded using: " + encoding)
 
             if encoding == "utf-8":
-                print("Data from BLE Server: {0}".format("".join(map(chr, new_data))))
+                logging.info("Data from BLE Server: {0}".format("".join(map(chr, new_data))))
                 access_points_str = new_data.decode()
                 return access_points_str
 
     except Exception as e:
         error_str = generic_exception_handler(e)
-        print("Error String: " + error_str)
+        logging.error("Error String: " + error_str)
         return error_str
 
 
@@ -94,7 +95,7 @@ async def main(device_name: str, device_addr: str, command: str, gatt_read_uuid:
     # We find a matching MAC for the provided device name, or we verify if the provided address can be found
     ble_device_addr = await find_ble_device(device_name, device_addr)
 
-    print("Preparing to send BLE data")
+    logging.info("Preparing to send BLE data")
     result_str = await send_ble_data(ble_device_addr, command, gatt_read_uuid, gatt_write_uuid)
     return result_str
 

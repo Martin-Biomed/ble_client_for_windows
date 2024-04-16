@@ -1,9 +1,9 @@
 
-## PyQT5-tools
+## PyQt5-tools
 
 ### Tool Installation
 
-This package was installed to aid the development experience of QT5 GUIs.
+The PyQt5 package was installed to aid the development experience of QT5 GUIs.
 
 **Note:** By default, this package would normally be installed in the (C:) drive, which
 is outside the Python virtual environment corresponding to the rest of the project.
@@ -16,6 +16,9 @@ To install this package, the following command was used in the PyCharm (venv) te
 
 #### Starting the Designer.exe Application
 
+The Designer.exe application was used to generate the initial GUI Qt5 objects (which were later
+modified inside the respective scripts).
+
 To start using this tool, navigate to the local "pyqt5-tools" folder in this repository, 
 and run the following executable:
 
@@ -24,9 +27,9 @@ qt5_applications -> Qt -> bin -> designer.exe
 #### Producing Python code from (.ui) files
 
 The PyQT5 designer tool will produce a (.ui) file of a single GUI "scene". This represents
-the basic graphical layout of the UI, all the functionality must still be added using Python.
+the basic graphical layout of the UI, the remaining functionality must still be added using Python.
 
 To produce usable Python code from the (.ui) file, run the following commands in the
-PyCharm (venv) terminal:
+PyCharm (venv) terminal [from the project base directory]:
 
 pyuic5 -x pyqt5-tools/qt5_applications/Qt/bin/[ui_filename].ui -o [python_filename].py
