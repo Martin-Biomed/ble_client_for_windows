@@ -10,6 +10,7 @@
 
 from PyQt5 import QtCore, QtWidgets
 import logging
+import sys
 
 from src.field_format_funcs import ble_msg_result_str_dict, ble_msg_result_str
 from src.GUI.gui_funcs import update_qt_text_str
