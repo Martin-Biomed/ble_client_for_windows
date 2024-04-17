@@ -10,6 +10,8 @@
 
 from PyQt5 import QtCore, QtWidgets
 import logging
+import sys
+
 import src.GUI.BLE_Client_Main_GUI_Dialog
 import src.GUI.Help_Init_Dialog
 import src.GUI.API_Viewer_Dialog
@@ -103,7 +105,6 @@ class Ui_Dialog(object):
 
 
 if __name__ == "__main__":
-    import sys
     app = QtWidgets.QApplication(sys.argv)
     # Removes the annoying "?" button which is hard to access in the Python programming
     app.setAttribute(QtCore.Qt.ApplicationAttribute.AA_DisableWindowContextHelpButton)

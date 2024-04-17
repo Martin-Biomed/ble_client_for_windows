@@ -7,6 +7,7 @@
 
 from PyQt5 import QtCore, QtWidgets
 import logging
+import sys
 
 from src.GUI.gui_funcs import main_screen_ok_button_clicked, update_qt_text_str, ble_msg_result_str_dict, ble_msg_result_str
 from src.GUI.Received_MSG_GUI_Dialog import Ui_results_dialog
