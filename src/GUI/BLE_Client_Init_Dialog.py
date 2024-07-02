@@ -97,7 +97,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Initial Application Window"))
         self.App_Name_Label.setText(_translate("Dialog", "Windows BLE GATT Client Utility"))
         self.ble_gui_selected_button.setText(_translate("Dialog", "Configure a BLE GATT Message using this BLE Client"))
         self.api_selected_button.setText(_translate("Dialog", "Enable BLE Client Utility API (HTTP Server)"))
