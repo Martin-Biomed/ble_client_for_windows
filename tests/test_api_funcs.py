@@ -210,7 +210,7 @@ class TestBleClientApi(TestCase):
 	def test_update_valid_msg(self):
 		""" Test 17: Updating a valid message string using the API endpoint  """
 		endpoint = "/msg"
-		arg = "wifi_scan"
+		arg = '{"cmd": "wifi_scan"}'
 		print("Sending PUT request to: " + endpoint + "/" + arg)
 		response = self.test_api_instance.put(endpoint + "/" + arg)
 		self.assertTrue(len(response.data.decode('utf-8')) > 1)
@@ -278,7 +278,7 @@ class TestBleClientApi(TestCase):
 
 		# Ensure the msg is configured to do a wifi-scan on an ESP32 device loaded with the appropriate sw (see top of file)
 		endpoint = "/msg"
-		arg = "wifi_scan"
+		arg = '{"cmd": "wifi_scan"}'
 		print("Sending PUT request to: " + endpoint + "/" + arg)
 		response = self.test_api_instance.put(endpoint + "/" + arg)
 		self.assertTrue(len(response.data.decode('utf-8')) > 1)
@@ -323,7 +323,7 @@ class TestBleClientApi(TestCase):
 
 		# Ensure the msg is configured to do a wifi-scan on an ESP32 device loaded with the appropriate sw (see top of file)
 		endpoint = "/msg"
-		arg = "wifi_scan"
+		arg = '{"cmd": "wifi_scan"}'
 		print("Sending PUT request to: " + endpoint + "/" + arg)
 		response = self.test_api_instance.put(endpoint + "/" + arg)
 		self.assertTrue(len(response.data.decode('utf-8')) > 1)
@@ -361,7 +361,7 @@ class TestBleClientApi(TestCase):
 
 		# Ensure the msg is configured to do a wifi-scan on an ESP32 device loaded with the appropriate sw (see top of file)
 		endpoint = "/msg"
-		arg = "wifi_scan"
+		arg = '{"cmd": "wifi_scan"}'
 		print("Sending PUT request to: " + endpoint + "/" + arg)
 		response = self.test_api_instance.put(endpoint + "/" + arg)
 		self.assertTrue(len(response.data.decode('utf-8')) > 1)
@@ -417,7 +417,7 @@ class TestBleClientApi(TestCase):
 
 		# Ensure the msg is configured to do a wifi-scan on an ESP32 device loaded with the appropriate sw (see top of file)
 		endpoint = "/msg"
-		arg = "wifi_scan"
+		arg = '{"cmd": "wifi_scan"}'
 		print("Sending PUT request to: " + endpoint + "/" + arg)
 		response = self.test_api_instance.put(endpoint + "/" + arg)
 		self.assertTrue(len(response.data.decode('utf-8')) > 1)

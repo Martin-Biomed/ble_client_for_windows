@@ -27,18 +27,21 @@ class Ui_Help_Dialog(object):
         self.Intro_Text_Label.setStyleSheet("font: 75 8pt \"Arial\";")
         self.Intro_Text_Label.setWordWrap(True)
         self.Intro_Text_Label.setObjectName("Intro_Text_Label")
+        self.Intro_Text_Label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
 
         self.Note1_Text_Label = QtWidgets.QLabel(Dialog)
         self.Note1_Text_Label.setGeometry(QtCore.QRect(30, 80, 341, 51))
         self.Note1_Text_Label.setStyleSheet("font: 75 8pt \"Arial\";")
         self.Note1_Text_Label.setWordWrap(True)
         self.Note1_Text_Label.setObjectName("Note1_Text_Label")
+        self.Note1_Text_Label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
 
         self.Note2_Text_Label = QtWidgets.QLabel(Dialog)
         self.Note2_Text_Label.setGeometry(QtCore.QRect(30, 130, 341, 41))
         self.Note2_Text_Label.setStyleSheet("font: 75 8pt \"Arial\";")
         self.Note2_Text_Label.setWordWrap(True)
         self.Note2_Text_Label.setObjectName("Note2_Text_Label")
+        self.Note2_Text_Label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
 
         self.UsingApp_Title_Label = QtWidgets.QLabel(Dialog)
         self.UsingApp_Title_Label.setGeometry(QtCore.QRect(30, 180, 111, 21))
@@ -49,43 +52,49 @@ class Ui_Help_Dialog(object):
         self.UsingApp_Text_Label.setStyleSheet("font: 75 8pt \"Arial\";")
         self.UsingApp_Text_Label.setWordWrap(True)
         self.UsingApp_Text_Label.setObjectName("UsingApp_Text_Label")
+        self.UsingApp_Text_Label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
 
         self.DeviceName_Text_Label = QtWidgets.QLabel(Dialog)
         self.DeviceName_Text_Label.setGeometry(QtCore.QRect(30, 230, 351, 51))
         self.DeviceName_Text_Label.setStyleSheet("font: 75 8pt \"Arial\";")
         self.DeviceName_Text_Label.setWordWrap(True)
         self.DeviceName_Text_Label.setObjectName("DeviceName_Text_Label")
+        self.DeviceName_Text_Label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
 
         self.DeviceAddr_Text_Label = QtWidgets.QLabel(Dialog)
         self.DeviceAddr_Text_Label.setGeometry(QtCore.QRect(30, 280, 351, 61))
         self.DeviceAddr_Text_Label.setStyleSheet("font: 75 8pt \"Arial\";")
         self.DeviceAddr_Text_Label.setWordWrap(True)
         self.DeviceAddr_Text_Label.setObjectName("DeviceAddr_Text_Label")
+        self.DeviceAddr_Text_Label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
 
         self.GattWrite_Text_Label = QtWidgets.QLabel(Dialog)
         self.GattWrite_Text_Label.setGeometry(QtCore.QRect(30, 350, 351, 51))
         self.GattWrite_Text_Label.setStyleSheet("font: 75 8pt \"Arial\";")
         self.GattWrite_Text_Label.setWordWrap(True)
         self.GattWrite_Text_Label.setObjectName("GattWrite_Text_Label")
+        self.GattWrite_Text_Label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
 
         self.GattRead_Text_Label = QtWidgets.QLabel(Dialog)
         self.GattRead_Text_Label.setGeometry(QtCore.QRect(30, 410, 351, 51))
         self.GattRead_Text_Label.setStyleSheet("font: 75 8pt \"Arial\";")
         self.GattRead_Text_Label.setWordWrap(True)
         self.GattRead_Text_Label.setObjectName("GattRead_Text_Label")
+        self.GattRead_Text_Label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
 
         self.Message_Text_Label = QtWidgets.QLabel(Dialog)
         self.Message_Text_Label.setGeometry(QtCore.QRect(30, 470, 351, 51))
         self.Message_Text_Label.setStyleSheet("font: 75 8pt \"Arial\";")
         self.Message_Text_Label.setWordWrap(True)
         self.Message_Text_Label.setObjectName("GattRead_Text_Label_2")
+        self.Message_Text_Label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Help"))
         self.Intro_Title_Label.setText(_translate("Dialog", "<html><head/><body><p><span style=\" font-weight:600;\">Introduction</span></p></body></html>"))
         self.Intro_Text_Label.setText(_translate("Dialog", "<html><head/><body><p align=\"justify\">This application was developed as a tool for interacting with BLE devices using GATT characteristics for inbound/outbound messaging (and GAP device discovery).</p></body></html>"))
         self.Note1_Text_Label.setText(_translate("Dialog", "<html><head/><body><p><span style=\" font-weight:600; text-decoration: underline;\">Note</span>: This application was only tested for the Windows 10 Bluetooth stack (compatibility is not guaranteed for later versions of the OS).</p></body></html>"))

@@ -19,7 +19,7 @@ from src.result_str_class import Result_String
 
 # We declare a custom MyDialog class so we can overload a few selected methods from the default QtWidgets.QDialog class
 class MyDialog(QtWidgets.QDialog):
-    def __init(self):
+    def __init__(self):
         # We call the constructor of the base class (QDialog) so we can initialise and modify base class attributes
         super().__init__()
 
@@ -95,9 +95,11 @@ class Ui_BLE_GATT_Client(object):
         self.BLE_Server_Read_Label.setGeometry(QtCore.QRect(80, 180, 251, 21))
         self.BLE_Server_Read_Label.setStyleSheet("font: 9pt \"Arial\";")
         self.BLE_Server_Read_Label.setObjectName("BLE_Server_Read_Label")
+        self.BLE_Server_Read_Label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
         self.uuid_form_label_1 = QtWidgets.QLabel(BLE_GATT_Client)
         self.uuid_form_label_1.setGeometry(QtCore.QRect(40, 190, 341, 31))
         self.uuid_form_label_1.setObjectName("uuid_form_label_1")
+        self.uuid_form_label_1.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
 
         # The BLE Server GATT Write Characteristic UUID Label + Input Text Field
         self.BLE_Write_UUID = QtWidgets.QTextEdit(BLE_GATT_Client)
@@ -107,15 +109,18 @@ class Ui_BLE_GATT_Client(object):
         self.BLE_Server_Write_Label.setGeometry(QtCore.QRect(80, 260, 241, 21))
         self.BLE_Server_Write_Label.setStyleSheet("font: 9pt \"Arial\";")
         self.BLE_Server_Write_Label.setObjectName("BLE_Server_Write_Label")
+        self.BLE_Server_Write_Label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
         self.uui_form_label_2 = QtWidgets.QLabel(BLE_GATT_Client)
         self.uui_form_label_2.setGeometry(QtCore.QRect(40, 270, 341, 31))
         self.uui_form_label_2.setObjectName("uui_form_label_2")
+        self.uui_form_label_2.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
 
         # The BLE Server Device Name Label + Input Text Field
         self.BLE_Server_Name_Label = QtWidgets.QLabel(BLE_GATT_Client)
         self.BLE_Server_Name_Label.setGeometry(QtCore.QRect(130, 20, 161, 21))
         self.BLE_Server_Name_Label.setStyleSheet("font: 10pt \"Arial\";")
         self.BLE_Server_Name_Label.setObjectName("BLE_Server_Name_Label")
+        self.BLE_Server_Name_Label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
         self.BLE_Device_Name = QtWidgets.QTextEdit(BLE_GATT_Client)
         self.BLE_Device_Name.setGeometry(QtCore.QRect(40, 50, 321, 31))
         self.BLE_Device_Name.setObjectName("BLE_Device_Name")
@@ -128,6 +133,7 @@ class Ui_BLE_GATT_Client(object):
         self.BLE_Server_MAC_Label.setGeometry(QtCore.QRect(100, 90, 201, 21))
         self.BLE_Server_MAC_Label.setStyleSheet("font: 10pt \"Arial\";")
         self.BLE_Server_MAC_Label.setObjectName("BLE_Server_MAC_Label")
+        self.BLE_Server_MAC_Label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
 
         # The BLE Message Label + Input Text Field
         self.msg_string = QtWidgets.QTextEdit(BLE_GATT_Client)
@@ -138,6 +144,7 @@ class Ui_BLE_GATT_Client(object):
         self.BLE_Client_Msg_Label.setStyleSheet("font: 9pt \"Arial\";")
         self.BLE_Client_Msg_Label.setObjectName("BLE_Client_Msg_Label")
         self.BLE_Client_Msg_Label.setWordWrap(True)
+        self.BLE_Client_Msg_Label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
 
         # Help Button
         self.default_buttonBox.helpRequested.connect(self.open_help_dialog)
@@ -163,7 +170,7 @@ class Ui_BLE_GATT_Client(object):
 
     def retranslateUi(self, BLE_GATT_Client):
         _translate = QtCore.QCoreApplication.translate
-        BLE_GATT_Client.setWindowTitle(_translate("BLE_GATT_Client", "Dialog"))
+        BLE_GATT_Client.setWindowTitle(_translate("BLE_GATT_Client", "BLE Client Manual Config Window"))
         self.BLE_Server_Read_Label.setText(_translate("BLE_GATT_Client", "BLE Server Read GATT Characteristic UUID"))
         self.uuid_form_label_1.setText(_translate("BLE_GATT_Client", "Enter value in form: (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)"))
         self.BLE_Server_Write_Label.setText(_translate("BLE_GATT_Client", "BLE Server Write GATT Characteristic UUID"))

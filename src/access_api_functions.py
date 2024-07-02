@@ -62,6 +62,7 @@ def update_ble_device_address(address):
 def update_gatt_write_uuid(uuid):
 	is_string = isinstance(uuid, str)
 	if is_string == 1:
+		uuid = str(uuid).lower()
 		logging.info("Received GATT Write UUID: " + uuid)
 		if check_if_valid_field_value(ble_gatt_write_uuid, uuid) == 0:
 			ble_msg_fields_dict[ble_gatt_write_uuid] = uuid
@@ -79,6 +80,7 @@ def update_gatt_write_uuid(uuid):
 def update_gatt_read_uuid(uuid):
 	is_string = isinstance(uuid, str)
 	if is_string == 1:
+		uuid = str(uuid).lower()
 		logging.info("Received GATT Read UUID: " + uuid)
 		if check_if_valid_field_value(ble_gatt_read_uuid, uuid) == 0:
 			ble_msg_fields_dict[ble_gatt_read_uuid] = uuid
@@ -96,6 +98,7 @@ def update_gatt_read_uuid(uuid):
 def update_ble_msg(message):
 	is_string = isinstance(message, str)
 	if is_string == 1:
+		message = str(message).lower()
 		logging.info("The message to send is: " + message)
 		if check_if_valid_field_value(ble_msg_str, message) == 0:
 			ble_msg_fields_dict[ble_msg_str] = message
