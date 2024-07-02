@@ -53,12 +53,14 @@ class Ui_results_dialog(object):
         self.results_description_label.setGeometry(QtCore.QRect(30, 20, 271, 16))
         self.results_description_label.setStyleSheet("font: 9pt \"Arial\";")
         self.results_description_label.setObjectName("results_description_label")
+        self.results_description_label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
 
         self.publish_options_label = QtWidgets.QLabel(Dialog)
         self.publish_options_label.setGeometry(QtCore.QRect(30, 390, 251, 41))
         self.publish_options_label.setStyleSheet("font: 9pt \"Arial\";\n""font: 8pt \"MS Shell Dlg 2\";")
         self.publish_options_label.setWordWrap(True)
         self.publish_options_label.setObjectName("publish_options_label")
+        self.publish_options_label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
 
         self.scrollArea = QtWidgets.QScrollArea(Dialog)
         self.scrollArea.setGeometry(QtCore.QRect(40, 50, 321, 321))
@@ -88,6 +90,7 @@ class Ui_results_dialog(object):
         self.reply_msg_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.reply_msg_label.setWordWrap(True)
         self.reply_msg_label.setObjectName("reply_msg_label")
+        self.reply_msg_label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse | QtCore.Qt.TextSelectableByKeyboard)
         self.scrollArea.setWidget(self.reply_msg_scrollArea)
 
         self.retranslateUi(Dialog)
@@ -97,7 +100,7 @@ class Ui_results_dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "BLE GATT Read Received Message"))
         self.results_description_label.setText(_translate("Dialog", "Message received from selected BLE Server is:"))
         self.publish_options_label.setText(_translate("Dialog",
                                                       "Would you like to start the Application API server (http://localhost:5900)? "

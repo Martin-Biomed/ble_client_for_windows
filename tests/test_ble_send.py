@@ -45,7 +45,7 @@ class TestSendingDataOverGatt(TestCase):
 
     def test_successful_wifi_scan(self):
         """ Test 1: Normal Wi-Fi Scan over the BLE GATT Client """
-        user_cmd = "wifi_scan"
+        user_cmd = '{"cmd": "wifi_scan"}'
         gatt_write_uuid = "0000dead-0000-1000-8000-00805f9b34fb"
         gatt_read_uuid = "0000fef4-0000-1000-8000-00805f9b34fb"
 
@@ -59,7 +59,7 @@ class TestSendingDataOverGatt(TestCase):
 
     def test_wifi_scan_no_ble_address(self):
         """ Test 2: Call to a BLE Server when no server was found by (find_ble_device) """
-        user_cmd = "wifi_scan"
+        user_cmd = '{"cmd": "wifi_scan"}'
         empty_ble_device_addr = ""
         gatt_write_uuid = "0000dead-0000-1000-8000-00805f9b34fb"
         gatt_read_uuid = "0000fef4-0000-1000-8000-00805f9b34fb"
@@ -69,7 +69,7 @@ class TestSendingDataOverGatt(TestCase):
 
     def test_wifi_scan_random_ble_address(self):
         """ Test 3: Call to a BLE Server when a random device MAC (not belonging to any device) is provided """
-        user_cmd = "wifi_scan"
+        user_cmd = '{"cmd": "wifi_scan"}'
         wrong_ble_device_addr = "AA:BB:CC:DD:EE:FF"
         gatt_write_uuid = "0000dead-0000-1000-8000-00805f9b34fb"
         gatt_read_uuid = "0000fef4-0000-1000-8000-00805f9b34fb"
@@ -79,7 +79,7 @@ class TestSendingDataOverGatt(TestCase):
 
     def test_wifi_scan_wrong_gatt_write_uuid(self):
         """ Test 4: Call to a BLE Server when the wrong GATT UUID (Write) is provided """
-        user_cmd = "wifi_scan"
+        user_cmd = '{"cmd": "wifi_scan"}'
         gatt_write_uuid = "0000xxxx-0000-1000-8000-00805f9b34fb"
         gatt_read_uuid = "0000fef4-0000-1000-8000-00805f9b34fb"
         result_str = asyncio.run(send_ble_data(self.ble_device_addr, user_cmd, gatt_read_uuid, gatt_write_uuid))
@@ -89,7 +89,7 @@ class TestSendingDataOverGatt(TestCase):
 
     def test_wifi_scan_wrong_gatt_read_uuid(self):
         """ Test 5: Call to a BLE Server when the wrong GATT UUID (Read) is provided """
-        user_cmd = "wifi_scan"
+        user_cmd = '{"cmd": "wifi_scan"}'
         gatt_write_uuid = "0000dead-0000-1000-8000-00805f9b34fb"
         gatt_read_uuid = "0000xxxx-0000-1000-8000-00805f9b34fb"
         result_str = asyncio.run(send_ble_data(self.ble_device_addr, user_cmd, gatt_read_uuid, gatt_write_uuid))
@@ -99,7 +99,7 @@ class TestSendingDataOverGatt(TestCase):
 
     def test_wifi_scan_missing_gatt_write_uuid(self):
         """ Test 6: Call to a BLE Server when a blank GATT UUID (Write) is provided """
-        user_cmd = "wifi_scan"
+        user_cmd = '{"cmd": "wifi_scan"}'
         gatt_write_uuid = ""
         gatt_read_uuid = "0000fef4-0000-1000-8000-00805f9b34fb"
         result_str = asyncio.run(send_ble_data(self.ble_device_addr, user_cmd, gatt_read_uuid, gatt_write_uuid))
@@ -109,7 +109,7 @@ class TestSendingDataOverGatt(TestCase):
 
     def test_wifi_scan_missing_gatt_read_uuid(self):
         """ Test 7: Call to a BLE Server when a blank GATT UUID (Read) is provided """
-        user_cmd = "wifi_scan"
+        user_cmd = '{"cmd": "wifi_scan"}'
         gatt_write_uuid = "0000dead-0000-1000-8000-00805f9b34fb"
         gatt_read_uuid = ""
         result_str = asyncio.run(send_ble_data(self.ble_device_addr, user_cmd, gatt_read_uuid, gatt_write_uuid))

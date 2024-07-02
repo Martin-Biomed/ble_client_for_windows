@@ -49,14 +49,14 @@ async def send_ble_data(ble_device_address: str, command: str, gatt_read_uuid: s
                 await client.write_gatt_char(gatt_write_uuid, command.encode('utf-8'), response=False)
 
             except asyncio.CancelledError:
-                access_points_str = "Asyncio Write GATT Operation: Cancelled"
+                reply_str = "Asyncio Write GATT Operation: Cancelled"
                 try:
                     disconnect_result = await client.disconnect()
                     logging.info("Disconnect Successful: " + str(disconnect_result))
                 except Exception as e:
-                    access_points_str += "\n "
-                    access_points_str += generic_exception_handler(e)
-                return access_points_str
+                    reply_str += "\n "
+                    reply_str += generic_exception_handler(e)
+                return reply_str
 
             # Receive data from ESP32 via BLE (response from BLE server)
             try:
@@ -64,14 +64,14 @@ async def send_ble_data(ble_device_address: str, command: str, gatt_read_uuid: s
                 new_data = await client.read_gatt_char(gatt_read_uuid)
 
             except asyncio.CancelledError:
-                access_points_str = "Asyncio Read GATT Operation: Cancelled"
+                reply_str = "Asyncio Read GATT Operation: Cancelled"
                 try:
                     disconnect_result = await client.disconnect()
                     logging.info("Disconnect Successful: " + str(disconnect_result))
                 except Exception as e:
-                    access_points_str += "\n "
-                    access_points_str += generic_exception_handler(e)
-                return access_points_str
+                    reply_str += "\n "
+                    reply_str += generic_exception_handler(e)
+                return reply_str
 
             # Executes when the user receives a msg from the selected GATT characteristic
             logging.info("Data from BLE Server: " + str(new_data))
@@ -81,8 +81,8 @@ async def send_ble_data(ble_device_address: str, command: str, gatt_read_uuid: s
 
             if encoding == "utf-8":
                 logging.info("Data from BLE Server: {0}".format("".join(map(chr, new_data))))
-                access_points_str = new_data.decode()
-                return access_points_str
+                reply_str = new_data.decode()
+                return reply_str
 
     except Exception as e:
         error_str = generic_exception_handler(e)

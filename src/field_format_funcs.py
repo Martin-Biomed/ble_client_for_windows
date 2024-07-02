@@ -1,5 +1,6 @@
 
 import re
+import logging
 
 # Each field has a max number of chars allowed
 max_uuid_str_len = 36
@@ -38,7 +39,7 @@ def check_if_valid_field_value(usr_field_name: str, qt_text_str: str) -> int:
 		if len(qt_text_str) <= max_device_name_len:
 			return 0
 		else:
-			print("Device Name with length " + str(len(qt_text_str)) + " exceeds char limit.")
+			logging.error("Device Name with length " + str(len(qt_text_str)) + " exceeds char limit.")
 			return -1
 
 	# Check the BLE Device Address is valid
@@ -48,15 +49,14 @@ def check_if_valid_field_value(usr_field_name: str, qt_text_str: str) -> int:
 			if re.match("[0-9a-f]{2}([-:]?)[0-9a-f]{2}(\\1[0-9a-f]{2}){4}$", qt_text_str):
 				return 0
 			else:
-				print(
-					"Provided MAC address did not match format: xx:xx:xx:xx:xx:xx (Note: F is highest Hex value allowed)")
+				logging.error("Provided MAC address did not match format: xx:xx:xx:xx:xx:xx (Note: F is highest Hex value allowed)")
 				return -1
 
 		elif len(qt_text_str) == 0:
 			return 0
 
 		else:
-			print("Device MAC Address with length " + str(len(qt_text_str)) + " exceeds char limit.")
+			logging.error("Device MAC Address with length " + str(len(qt_text_str)) + " exceeds char limit.")
 			return -1
 
 	# Check the BLE GATT Write Characteristic UUID is valid
@@ -66,15 +66,15 @@ def check_if_valid_field_value(usr_field_name: str, qt_text_str: str) -> int:
 			if re.match("[\x00-\x7F]{8}-[\x00-\x7F]{4}-[\x00-\x7F]{4}-[\x00-\x7F]{4}-[\x00-\x7F]{12}", qt_text_str):
 				return 0
 			else:
-				print("Provided GATT Write UUID did not match format: xxxxxxxx-xxxx-xxxxx-xxxx-xxxxxxxxxxxx")
+				logging.error("Provided GATT Write UUID did not match format: xxxxxxxx-xxxx-xxxxx-xxxx-xxxxxxxxxxxx")
 				return -1
 
 		elif len(qt_text_str) == 0:
-			print("GATT Write UUID is required to receive replies from BLE GATT Server")
+			logging.error("GATT Write UUID is required to receive replies from BLE GATT Server")
 			return -1
 
 		else:
-			print("BLE GATT Write UUID with length " + str(len(qt_text_str)) + " exceeds char limit.")
+			logging.error("BLE GATT Write UUID with length " + str(len(qt_text_str)) + " exceeds char limit.")
 			return -1
 
 	# Check the BLE GATT Read Characteristic UUID is valid
@@ -84,15 +84,15 @@ def check_if_valid_field_value(usr_field_name: str, qt_text_str: str) -> int:
 			if re.match("[\x00-\x7F]{8}-[\x00-\x7F]{4}-[\x00-\x7F]{4}-[\x00-\x7F]{4}-[\x00-\x7F]{12}", qt_text_str):
 				return 0
 			else:
-				print("Provided GATT Read UUID did not match format: xxxxxxxx-xxxx-xxxxx-xxxx-xxxxxxxxxxxx")
+				logging.error("Provided GATT Read UUID did not match format: xxxxxxxx-xxxx-xxxxx-xxxx-xxxxxxxxxxxx")
 				return -1
 
 		elif len(qt_text_str) == 0:
-			print("GATT Read UUID is required to send a message to BLE GATT Server")
+			logging.error("GATT Read UUID is required to send a message to BLE GATT Server")
 			return -1
 
 		else:
-			print("BLE GATT Read UUID with length " + str(len(qt_text_str)) + " exceeds char limit.")
+			logging.error("BLE GATT Read UUID with length " + str(len(qt_text_str)) + " exceeds char limit.")
 			return -1
 
 	# Check the message to be sent over BLE GATT is valid
@@ -100,6 +100,6 @@ def check_if_valid_field_value(usr_field_name: str, qt_text_str: str) -> int:
 		if len(qt_text_str) <= max_msg_len:
 			return 0
 		else:
-			print("Message string with length " + str(len(qt_text_str)) + " exceeds char limit.")
+			logging.error("Message string with length " + str(len(qt_text_str)) + " exceeds char limit.")
 			return -1
 
