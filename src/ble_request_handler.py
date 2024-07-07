@@ -100,10 +100,3 @@ async def main(device_name: str, device_addr: str, command: str, gatt_read_uuid:
     return result_str
 
 
-#if __name__ == "__main__":
-    # args = ["wifi_scan"]
-    # asyncio.run(main(*args))
-
-    #user_cmd = "wifi_scan"
-    #asyncio.run(main(user_cmd))
-

@@ -1,0 +1,258 @@
+<mxfile host="Electron" modified="2024-07-07T10:04:00.515Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="9GREhgwlKNn-0TbtuYp-" version="24.0.4" type="device" pages="2">
+  <diagram name="Manual Workflow" id="n5HDwYYb-N4Obx8aIzvy">
+    <mxGraphModel dx="1257" dy="767" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="b-T0LnGMNMlS7ake3-13-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="b-T0LnGMNMlS7ake3-13-3" target="b-T0LnGMNMlS7ake3-13-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-2" value="Opens Dialog&lt;div&gt;(BLE GATT Message Config)&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="b-T0LnGMNMlS7ake3-13-1" vertex="1" connectable="0">
+          <mxGeometry x="-0.0571" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-3" value="BLE_Client&lt;div&gt;Init_Dialog&lt;/div&gt;" style="rounded=1;html=1;arcSize=11;fontSize=16;fontStyle=1;spacingLeft=6;spacingRight=6;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="250" y="160" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1.004;exitY=0.348;exitDx=0;exitDy=0;entryX=-0.006;entryY=0.437;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" parent="1" source="b-T0LnGMNMlS7ake3-13-25" target="b-T0LnGMNMlS7ake3-13-23" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-5" value="User Presses &quot;OK&quot;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="b-T0LnGMNMlS7ake3-13-4" vertex="1" connectable="0">
+          <mxGeometry x="-0.3473" y="-2" relative="1" as="geometry">
+            <mxPoint x="17" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-6" value="BLE_Client_Main_GUI_Dialog&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Requires the relevant fields to be filled out correctly:&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;BLE Server Device Name or MAC Address&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;BLE Server GATT Read Characteristic UUID&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;BLE Server GATT Write Characteristic UUID&lt;/span&gt;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Message to Send&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;When user presses &quot;OK&quot;, starts the process of sending msg.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=3;fontSize=16;fontStyle=1;verticalAlign=top;spacingLeft=6;spacingRight=6;" parent="1" vertex="1">
+          <mxGeometry x="160" y="335" width="310" height="225" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-7" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.001;entryY=0.446;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="b-T0LnGMNMlS7ake3-13-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="55" y="200" as="sourcePoint" />
+            <mxPoint x="250" y="205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-8" value="Mouse Click" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="b-T0LnGMNMlS7ake3-13-7" vertex="1" connectable="0">
+          <mxGeometry x="-0.25" y="-4" relative="1" as="geometry">
+            <mxPoint x="15" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-9" value="PC User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="20" y="163" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-10" value="PC User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="20" y="400" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.001;entryY=0.543;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="b-T0LnGMNMlS7ake3-13-10" target="b-T0LnGMNMlS7ake3-13-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-12" value="Enters Text&amp;nbsp;&lt;div&gt;Fields&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="b-T0LnGMNMlS7ake3-13-11" vertex="1" connectable="0">
+          <mxGeometry x="-0.1636" y="4" relative="1" as="geometry">
+            <mxPoint x="4" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-13" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.998;exitY=0.222;exitDx=0;exitDy=0;entryX=0.005;entryY=0.477;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" parent="1" source="b-T0LnGMNMlS7ake3-13-24" target="b-T0LnGMNMlS7ake3-13-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-14" value="function call&lt;div&gt;(main) func&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="b-T0LnGMNMlS7ake3-13-13" vertex="1" connectable="0">
+          <mxGeometry x="-0.1635" y="-2" relative="1" as="geometry">
+            <mxPoint x="4" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-15" value="GUI_Funcs&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 11px;&quot;&gt;update_qt_text_str(s): &lt;span style=&quot;font-weight: normal;&quot;&gt;This function is called for each of the fields that has been updated by the user. It updates the global field value dictionaries.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 11px;&quot;&gt;main_screen_ok_button_clicked: &lt;span style=&quot;font-weight: normal;&quot;&gt;Check if the prepared message is ready to send, if its OK, then call the BLE Request Handler to send the msg to the BLE device.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Each field is checked by the (check_if_valid_field_value) function, if any field is invalid, an error is returned.&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=5;fontSize=16;fontStyle=1;verticalAlign=top;spacingLeft=7;spacingRight=7;" parent="1" vertex="1">
+          <mxGeometry x="600" y="353" width="310" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-16" value="BLE Request Handler&amp;nbsp;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;find_ble_device: &lt;span style=&quot;font-weight: normal;&quot;&gt;Attempts to find the selected BLE device using either MAC or Device Name.&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;send_ble_msg:&lt;span style=&quot;font-weight: normal;&quot;&gt; Attempts to send a message to the respective BLE GATT characteristics&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=5;fontSize=16;fontStyle=1;verticalAlign=top;spacingLeft=7;spacingRight=7;" parent="1" vertex="1">
+          <mxGeometry x="1020" y="350" width="120" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-17" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.245;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="910" y="509" as="sourcePoint" />
+            <mxPoint x="1020" y="509" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-18" value="reply_str" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="b-T0LnGMNMlS7ake3-13-17" vertex="1" connectable="0">
+          <mxGeometry x="-0.1635" y="-2" relative="1" as="geometry">
+            <mxPoint x="4" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-19" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.385;exitDx=0;exitDy=0;entryX=0;entryY=0.245;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;exitPerimeter=0;" parent="1" source="b-T0LnGMNMlS7ake3-13-29" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="490" y="510" as="sourcePoint" />
+            <mxPoint x="600" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-20" value="reply_str" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="b-T0LnGMNMlS7ake3-13-19" vertex="1" connectable="0">
+          <mxGeometry x="-0.1635" y="-2" relative="1" as="geometry">
+            <mxPoint x="4" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#2119FF;" parent="1" source="b-T0LnGMNMlS7ake3-13-23" target="b-T0LnGMNMlS7ake3-13-26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-22" value="Values Updated" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="b-T0LnGMNMlS7ake3-13-21" vertex="1" connectable="0">
+          <mxGeometry x="0.6066" y="1" relative="1" as="geometry">
+            <mxPoint x="6" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-23" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2119FF;" parent="1" vertex="1">
+          <mxGeometry x="600" y="387" width="310" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-24" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#FF8000;arcSize=10;" parent="1" vertex="1">
+          <mxGeometry x="600" y="440" width="310" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-25" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2119FF;arcSize=11;" parent="1" vertex="1">
+          <mxGeometry x="160" y="370" width="310" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-26" value="Field Format Funcs&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Defines the values of the global [&lt;/span&gt;ble_msg_fields_dict&lt;span style=&quot;font-weight: normal;&quot;&gt;] dictionary that can be updated/accessed from multiple parts of the application.&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=5;fontSize=16;fontStyle=1;verticalAlign=top;spacingLeft=7;spacingRight=7;" parent="1" vertex="1">
+          <mxGeometry x="600" y="220" width="220" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="b-T0LnGMNMlS7ake3-13-29" target="b-T0LnGMNMlS7ake3-13-30" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-28" value="Opens Dialog&lt;div&gt;(automatically)&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="b-T0LnGMNMlS7ake3-13-27" vertex="1" connectable="0">
+          <mxGeometry x="-0.0694" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-29" value="Once the (reply_str) is received, we open the &lt;b&gt;Received Message GUI Dialog&lt;/b&gt;." style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#FF8000;arcSize=11;" parent="1" vertex="1">
+          <mxGeometry x="160" y="485" width="310" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-30" value="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Received_MSG_GUI_Dialog&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Displays the reply_str variable in a separate Qt5 Dialog.&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=14;fontSize=16;fontStyle=1;verticalAlign=top;spacingLeft=6;spacingRight=6;" parent="1" vertex="1">
+          <mxGeometry x="160" y="620" width="310" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="b-T0LnGMNMlS7ake3-13-31" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Manually Configuring a BLE GATT message&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=5" parent="1" vertex="1">
+          <mxGeometry x="375" y="90" width="420" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="5H21tnFdyMlSl0WOOKPF" name="RESTful API Workflow">
+    <mxGraphModel dx="1257" dy="767" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="8XCBuqOnwlnn9YZGMq6w-3" target="8XCBuqOnwlnn9YZGMq6w-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-2" value="Opens Dialog&lt;div&gt;(BLE Client API Server)&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="8XCBuqOnwlnn9YZGMq6w-1" vertex="1" connectable="0">
+          <mxGeometry x="-0.0571" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-3" value="BLE_Client&lt;div&gt;Init_Dialog&lt;/div&gt;" style="rounded=1;html=1;arcSize=11;fontSize=16;fontStyle=1;spacingLeft=6;spacingRight=6;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="206" y="120" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-4" value="API_Viewer_Dialog&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: normal; background-color: initial;&quot;&gt;Starts a Flask server on localhost:5900. The server runs as a parallel QThread to the rest of the GUI.&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;The &lt;/span&gt;update_field_values&lt;span style=&quot;font-weight: normal;&quot;&gt; function runs periodically every second (within the GUI). This function updates the QText with the values of the global field dictionaries.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=3;fontSize=16;fontStyle=1;verticalAlign=top;spacingLeft=6;spacingRight=6;" parent="1" vertex="1">
+          <mxGeometry x="116" y="295" width="310" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-5" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.001;entryY=0.446;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="8XCBuqOnwlnn9YZGMq6w-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="160" as="sourcePoint" />
+            <mxPoint x="206" y="165" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-6" value="Mouse Click" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="8XCBuqOnwlnn9YZGMq6w-5" vertex="1" connectable="0">
+          <mxGeometry x="-0.25" y="-4" relative="1" as="geometry">
+            <mxPoint x="15" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-7" value="PC User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="50" y="129" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-8" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="801" y="432.5" as="sourcePoint" />
+            <mxPoint x="890" y="433" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-9" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;function call&lt;/font&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;(main) func&lt;/font&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="8XCBuqOnwlnn9YZGMq6w-8" vertex="1" connectable="0">
+          <mxGeometry x="-0.1635" y="-2" relative="1" as="geometry">
+            <mxPoint x="4" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" parent="1" source="8XCBuqOnwlnn9YZGMq6w-12" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1140" y="491" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-11" value="BLE&amp;nbsp;&lt;div&gt;Message&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="8XCBuqOnwlnn9YZGMq6w-10" vertex="1" connectable="0">
+          <mxGeometry x="-0.0102" y="1" relative="1" as="geometry">
+            <mxPoint x="3" y="-21" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-12" value="BLE Request Handler&amp;nbsp;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;find_ble_device: &lt;span style=&quot;font-weight: normal;&quot;&gt;Attempts to find the selected BLE device using either MAC or Device Name.&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;send_ble_msg:&lt;span style=&quot;font-weight: normal;&quot;&gt; Attempts to send a message to the respective BLE GATT characteristics&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=5;fontSize=16;fontStyle=1;verticalAlign=top;spacingLeft=7;spacingRight=7;" parent="1" vertex="1">
+          <mxGeometry x="891" y="386" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-13" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.245;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="802" y="467.25" as="sourcePoint" />
+            <mxPoint x="891" y="468" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-14" value="reply_str" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="8XCBuqOnwlnn9YZGMq6w-13" vertex="1" connectable="0">
+          <mxGeometry x="-0.1635" y="-2" relative="1" as="geometry">
+            <mxPoint x="12" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-15" value="Field Format Funcs&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Defines the values of the global [&lt;/span&gt;ble_msg_fields_dict&lt;span style=&quot;font-weight: normal;&quot;&gt;] dictionary that can be updated/accessed from multiple parts of the application.&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=5;fontSize=16;fontStyle=1;verticalAlign=top;spacingLeft=7;spacingRight=7;" parent="1" vertex="1">
+          <mxGeometry x="871" y="280" width="220" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-16" value="Access_API_Functions&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;This file defines the API calls which are supported by the Flask server.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;This server lets users add and retrieve data using HTTP requests (RESTful APIs). Every time a value is updated, the global dicitonary is updated.&lt;/span&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Once the user sends the request to send the message, we check if each of the field values in the global dictionary has valid data (using the&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;check_if_valid_field_value function&lt;/span&gt;&lt;span style=&quot;font-weight: 400; background-color: initial;&quot;&gt;)&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-weight: 400; background-color: initial;&quot;&gt;to determine if we send the message or not.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: 400; background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 11px;&quot;&gt;&lt;span style=&quot;font-weight: 400; background-color: initial;&quot;&gt;If all fields are correctly formatted, the mesage is sent over BLE GATT. Once the (reply_str) is returned, the global dictionary for the results is updated and displayed.&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=3;fontSize=16;fontStyle=1;verticalAlign=top;spacingLeft=6;spacingRight=6;" parent="1" vertex="1">
+          <mxGeometry x="501" y="255" width="300" height="245" as="geometry" />
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-17" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="8XCBuqOnwlnn9YZGMq6w-19" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="501" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-18" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Starts&lt;/font&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;QThread&lt;/font&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="8XCBuqOnwlnn9YZGMq6w-17" vertex="1" connectable="0">
+          <mxGeometry x="-0.0979" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-19" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2119FF;" parent="1" vertex="1">
+          <mxGeometry x="116" y="330" width="310" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FF8000;entryX=-0.005;entryY=0.682;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="8XCBuqOnwlnn9YZGMq6w-15" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="801" y="345" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-21" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Values&lt;/font&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Updated&lt;/font&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="8XCBuqOnwlnn9YZGMq6w-20" vertex="1" connectable="0">
+          <mxGeometry x="-0.1722" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-22" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#FF8000;arcSize=10;" parent="1" vertex="1">
+          <mxGeometry x="501" y="328" width="300" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="8XCBuqOnwlnn9YZGMq6w-25" target="8XCBuqOnwlnn9YZGMq6w-16" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="721" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-24" value="HTTP Requests" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="8XCBuqOnwlnn9YZGMq6w-23" vertex="1" connectable="0">
+          <mxGeometry x="-0.3684" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-25" value="&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;External&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Applications&lt;/b&gt;&lt;/font&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="581" y="131" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-26" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#00CC00;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="501" y="383" width="300" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="8XCBuqOnwlnn9YZGMq6w-27" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Starting RESTful server to configure BLE GATT message through API calls&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=5" parent="1" vertex="1">
+          <mxGeometry x="390" y="50" width="420" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VzVbL2zUcFuZADIkYSwg-1" value="&lt;b&gt;RESTful API Requests&lt;/b&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;The following HTTP requests show examples on how to configure the necessary parameters to communicate with a BLE Server using BLE GATT.&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Setting up the GATT Read/Write Characteristic UUIDs to use for this message:&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;color: rgb(33, 33, 33); font-family: Inter, OpenSans, Helvetica, Arial, sans-serif; white-space-collapse: preserve; background-color: rgb(255, 255, 255);&quot;&gt;http://127.0.0.1:5900/gatt/write/0000&lt;/span&gt;&lt;span style=&quot;font-family: Inter, OpenSans, Helvetica, Arial, sans-serif; white-space-collapse: preserve; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot; color=&quot;#ff0000&quot;&gt;XXXX&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(33, 33, 33); font-family: Inter, OpenSans, Helvetica, Arial, sans-serif; white-space-collapse: preserve; background-color: rgb(255, 255, 255);&quot;&gt;-0000-1000-8000-00805f9b34fb&lt;/span&gt;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve; color: rgb(33, 33, 33); font-family: Inter, OpenSans, Helvetica, Arial, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;http://127.0.0.1:5900/gatt/read/0000&lt;/span&gt;&lt;span style=&quot;white-space-collapse: preserve; font-family: Inter, OpenSans, Helvetica, Arial, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot; color=&quot;#ff0000&quot;&gt;XXXX&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;white-space-collapse: preserve; color: rgb(33, 33, 33); font-family: Inter, OpenSans, Helvetica, Arial, sans-serif; background-color: rgb(255, 255, 255);&quot;&gt;-0000-1000-8000-00805f9b34fb&lt;/span&gt;&lt;/font&gt;&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;font face=&quot;Inter, OpenSans, Helvetica, Arial, sans-serif&quot; color=&quot;#212121&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;Setting up the BLE Device by using the Device Name or MAC Address:&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;font face=&quot;Inter, OpenSans, Helvetica, Arial, sans-serif&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&lt;font color=&quot;#212121&quot;&gt;http://127.0.0.1:5900/device/name/&lt;/font&gt;&lt;font color=&quot;#ff0000&quot;&gt;XXXXXXXXXXXXXXXX&lt;/font&gt;&lt;font color=&quot;#212121&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font face=&quot;Inter, OpenSans, Helvetica, Arial, sans-serif&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&lt;font color=&quot;#212121&quot;&gt;http://127.0.0.1:5900/device/address/&lt;/font&gt;&lt;font color=&quot;#ff0000&quot;&gt;aa:bb:cc:dd:ee:ff&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot; face=&quot;Inter, OpenSans, Helvetica, Arial, sans-serif&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;To configure the actual message (string) to send to the BLE Server, use the following request:&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;font style=&quot;font-size: 11px;&quot; face=&quot;Inter, OpenSans, Helvetica, Arial, sans-serif&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;http://127.0.0.1:5900/msg/&lt;font style=&quot;font-size: 11px;&quot; color=&quot;#ff0000&quot;&gt;XXXXXXXXXXXXXXXXXXXXXXXXXX&lt;/font&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot; face=&quot;Inter, OpenSans, Helvetica, Arial, sans-serif&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;Once the user has defined all the necessary fields to send a message over BLE, we can send the message using the following request:&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;font style=&quot;font-size: 11px;&quot; face=&quot;Inter, OpenSans, Helvetica, Arial, sans-serif&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;http://127.0.0.1:5900/send_msg&lt;/span&gt;&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="30" y="526" width="730" height="284" as="geometry" />
+        </mxCell>
+        <mxCell id="VzVbL2zUcFuZADIkYSwg-2" value="String Encoding:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;This application checks the formatting of each of the following fields (and returns an error message instead of updating the values if certain conditions aren&#39;t met):&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;ul style=&quot;&quot;&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;GATT Read and Write Characteristic UUIDs&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Device Name&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;MAC Address&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;When updating the actual message field, ensure that you take into consideration factors like URL encoded versions of strings, as this app will not automatically convert strings into URL-compatible strings.&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="770" y="550" width="360" height="190" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
