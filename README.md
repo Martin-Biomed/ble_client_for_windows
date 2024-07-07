@@ -39,12 +39,6 @@ GATT Services are organised in a hierarchal order:
 
 - **Characteristics:** The lowest level concept in GATT transactions. Each characteristic is defined by a UUID. The UUID is commonly provided as a 16-bit reference of 128-bit reference.
 
-    -  This project uses two separate BLE GATT characteristics:
-
-        - **READ Characteristic (0xFEF4):** This characteristic is where the ESP32 reads any input from BLE clients. A BLE client can publish 
-       commands to this GATT characteristic to control the execution of the ESP32 functions (Refer to the project "documentation" directory for more info).
-
-        - **WRITE Characteristic (0xDEAD):** This characteristic is where the ESP32 publishes any data that is meant to be accessible to an external BLE client.
 
 **Note:** The (128-bit) representation of the BLE Characteristic UUID is the (16-bit) Byte UUID superimposed over the standard Bluetooth Base UUID 
 (Refer to the project "documentation" directory for more info on how we use UUIDs).
