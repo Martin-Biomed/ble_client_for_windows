@@ -1,7 +1,7 @@
 # About this Project
 
 This project was developed as a tool to be able to communicate with a BLE-enabled device which 
-uses BLE GATT Characteristics for receiving instructions and sending replies.
+uses a single BLE GATT Characteristic for receiving instructions and another Characteristic for sending replies.
 
 This tool ignores some of the higher-level structural elements that can be used to organise 
 GATT Characteristic Groups (like BLE GATT Profiles and Services).
@@ -10,34 +10,41 @@ This project was only ever intended to be run in the Windows OS (version 10 or a
 
 ## BLE GATT Usage
 
-The ESP32 uses a BLE GATT Event Bus to receive requests to execute functions. Most of the configuration for the BLE communications is done within the "ble_setup" module.
+This app was developed as a standalone tool for communicating with simple BLE-capable devices (servers).
+
+Bluetooth Low Energy (BLE) communication is significantly different than Classic Bluetooth communications. BLE was 
+developed for using significantly less power, simplifying device pairing, and maintaining lower connection 
+(but still reliable) connection speeds.
 
 ### BLE GATT Background Info
 
-One of the mechanisms for using BLE for messaging is to use a GATT publish/subscribe method.
+To use BLE for messaging requires a firm understanding of the GATT publish/subscribe method.
 
 It is recommended that potential users become acquainted with basic BLE concepts, fortunately there are good resources online, like: 
 https://learn.adafruit.com/introduction-to-bluetooth-low-energy/introduction
 
 ### Generic Access Profile (GAP) Device-to-Device Connections
 
-The GAP device-to-device connection is the first step in establishing communications (using this BLE methodology). 
+The GAP device-to-device connection is the first step in establishing communications (using the BLE GATT methodology). 
 
-The ESP32 advertises its device BLE characteristics (like its Device Name and MAC Address). This allows BLE-enabled devices to detect and establish a connection to the ESP32.
 
 ### Generic ATTribute Profile (GATT) Services
 
-The ESP32 functions as a GATT Server, where a client can then subscribe/publish to available Services offered by the ESP32.
+Assuming we have a BLE-capable device that functions as a GATT Server, where a client (like this app) can then 
+subscribe/publish to available services offered by the server.
 
-GATT Services are organised in a hierarchal order:
+GATT services are organised in a hierarchal order:
 
-- **Profile (Highest Level):** Defines a collection of Services. In this project, there is only a single (implicitly-defined) Profile.
-
-
-- **Services:** Contains a group of characteristics, and are more commonly used if different types of functions are available from the same BLE server. This project only uses a single service.
+- **Profile (Highest Level):** Defines a collection of Services. This project ignores this level of the hierarchy and just
+directly publishes/subscribes to specific GATT Characteristics.
 
 
-- **Characteristics:** The lowest level concept in GATT transactions. Each characteristic is defined by a UUID. The UUID is commonly provided as a 16-bit reference of 128-bit reference.
+- **Services:** Contains a group of characteristics, and are more commonly used if different types of functions are available from the 
+same BLE server. This project ignores this level of the hierarchy and just directly publishes/subscribes to specific GATT Characteristics. 
+
+
+- **Characteristics:** The lowest level concept in GATT transactions. Each characteristic is defined by a UUID. The UUID is commonly provided 
+as a 16-bit reference or a 128-bit reference.
 
 
 **Note:** The (128-bit) representation of the BLE Characteristic UUID is the (16-bit) Byte UUID superimposed over the standard Bluetooth Base UUID 
